@@ -14,7 +14,8 @@
           "max": 6
         },
         "biography": "" ,
-        "moves" : []
+        "moves" : {},
+        "look": ""
       }
     },
     "character": {

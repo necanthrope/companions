@@ -1,6 +1,6 @@
-export const AGENTMOVES = {};
+export const CONSTRUCTMOVES = {};
 
-AGENTMOVES.moves = {
+CONSTRUCTMOVES.moves = {
   "" : {
     "title" : "",
     "description" : "",

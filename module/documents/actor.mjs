@@ -92,11 +92,6 @@ export class CompanionsActor extends Actor {
         data[k] = foundry.utils.deepClone(v);
       }
     }
-
-    // Add level for easier access, or fall back to 0.
-    if (data.attributes.level) {
-      data.lvl = data.attributes.level.value ?? 0;
-    }
   }
 
   /**

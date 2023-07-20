@@ -77,16 +77,19 @@ export class CompanionsActorSheet extends ActorSheet {
       statLabelObj[v.label] = v.sheetLabel;
     }
 
-    for (let move of Object.entries(CONFIG.COMPANIONS.BASICMOVES.moves)) {
-      move[1].rolls = [];
-      for (const movestat of move[1].stat) {
+    // Build basic moves object.
+    context.system.moves.basic = {};
+    for (const key in CONFIG.COMPANIONS.BASICMOVES.moves) {
+      let move = CONFIG.COMPANIONS.BASICMOVES.moves[key];
+      move.rolls = [];
+      for (const movestat of move.stat) {
         var roll = {};
         roll.stat = movestat;
         roll.bonus = statObj[movestat];
         roll.statLabel = statLabelObj[movestat];
-        move[1].rolls.push(roll);
+        move.rolls.push(roll);
       }
-      context.system.moves.push(move[1]);
+      context.system.moves.basic[key] = move;
     }
   }
 
@@ -101,18 +104,6 @@ export class CompanionsActorSheet extends ActorSheet {
     // Initialize containers.
     const gear = [];
     const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: []
-    };
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
@@ -125,18 +116,11 @@ export class CompanionsActorSheet extends ActorSheet {
       else if (i.type === 'feature') {
         features.push(i);
       }
-      // Append to spells.
-      else if (i.type === 'spell') {
-        if (i.system.spellLevel != undefined) {
-          spells[i.system.spellLevel].push(i);
-        }
-      }
     }
 
     // Assign and return
     context.gear = gear;
     context.features = features;
-    context.spells = spells;
   }
 
   /* -------------------------------------------- */

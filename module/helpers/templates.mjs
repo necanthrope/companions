@@ -9,7 +9,6 @@
     // Actor partials.
     "systems/companions/templates/actor/parts/actor-features.html",
     "systems/companions/templates/actor/parts/actor-items.html",
-    "systems/companions/templates/actor/parts/actor-spells.html",
     "systems/companions/templates/actor/parts/actor-effects.html",
   ]);
 };

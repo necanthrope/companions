@@ -24,31 +24,31 @@
 -->
 
           <div class="abilities flexcol">
-            {{#each system.moves as |move key|}}
+            {{#each system.moves.basic}}
             <div class="ability flexrow flex-group-center">
 		    <!--
 		    <label for="system.moves.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="2d6+{{move.bonus}}" data-label="{{move.title}}">{{move.title}}</label>
 		    <span class="ability-mod rollable" data-roll="2d6+{{move.bonus}}" data-label="{{move.stat}}" data-move="{{move}}">{{#if (eq move.type "roll")}}{{numberFormat move.bonus decimals=0 sign=true}}{{/if}}</span>
 		    -->
-		    <label for="system.moves.{{key}}.value" class="resource-label flexlarge align-left">{{move.title}}</label>
+		    <label for="{{@key}}" class="resource-label flexlarge align-left">{{this.title}}</label>
             </div>
 	    <div>
-              {{{move.description}}}
-	      {{#if (ne move.options "")}}
-	      {{{move.options}}}
+              {{{this.description}}}
+	      {{#if (ne this.options "")}}
+	      {{{this.options}}}
 	      {{/if}}
             </div>
-	    {{#if (gt move.stat.length 0)}}
+	    {{#if (gt this.stat.length 0)}}
 	    <div>
               To make this move, 
-	      {{#each move.rolls as |roll key|}}
+	      {{#each this.rolls as |roll key|}}
 	      <span class="ability-mod rollable" 
 		    data-roll="2d6+{{roll.bonus}}" 
-		    data-label="{{move.title}}"
-		    data-fullHit="{{move.fullHit}}"
-		    data-partialHit="{{move.partialHit}}"
-		    data-miss="{{move.miss}}"
-		    data-options="{{move.options}}"
+		    data-label="{{../this.title}}"
+		    data-fullHit="{{../this.fullHit}}"
+		    data-partialHit="{{../this.partialHit}}"
+		    data-miss="{{../this.miss}}"
+		    data-options="{{../this.options}}"
 		    data-statLabel="{{roll.statLabel}}"
 		    >Roll +{{roll.statLabel}}</span>{{#unless @last}} OR {{/unless}}{{/each}}.
 	    </div>
