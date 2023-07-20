@@ -1,0 +1,34 @@
+{
+  "id": "companions",
+  "title": "Companions",
+  "description": "Something is wrong with the Universe, and you know exactly what it is. We used to live in a candy-colored age, full of wonder and danger in equal measure. Standing over the balanced Universe were its mighty guardians, the Time Ladies. A great war destroyed all but one of them. She was the Earth's defender, protecting it time and again from alien threats. She was a god humbled by death. She was your friend. She was the Doctor.<br/>\n<br/>\nAnd then she died.<br/>\n<br/>\nNow the Doctor's enemies gather and plot, scheming to claim the Universe for themselves. Only you, her stalwart and learned companions, stand against the encroaching darkness. It's a good thing she trained you so well, isn't it? ",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": 10,
+    "verified": "11.305",
+    "maximum": 11
+  },
+  "authors": [{
+    "name": "Necanthrope"
+  }],
+  "esmodules": ["module/companions.mjs"],
+  "styles": ["css/companions.css"],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "fate",
+  "secondaryTokenAttribute": "spark",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt",
+  "changelog": "CHANGELOG.md"
+}

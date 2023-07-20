@@ -1,0 +1,71 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "base": {
+        "fate": {
+          "value": 6,
+          "min": 0,
+          "max": 6
+        },
+        "spark": {
+          "value": 6,
+          "min": 0,
+          "max": 6
+        },
+        "biography": "" ,
+        "moves" : []
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "attributes": {
+        "level": {
+          "value": 1
+        }
+      },
+      "abilities": {
+        "cool": {
+          "value": 0
+        },
+        "bold": {
+          "value": 0
+        },
+        "appeal": {
+          "value": 0
+        },
+        "clever": {
+          "value": 0
+        },
+        "vortex": {
+          "value": 0
+        }
+      }
+    },
+    "npc": {
+      "templates": ["base"],
+      "cr": 0
+    }
+  },
+  "Item": {
+    "types": ["item", "feature", "spell"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "item": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": 0,
+      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
+    },
+    "feature": {
+      "templates": ["base"]
+    },
+    "spell": {
+      "templates": ["base"],
+      "spellLevel": 1
+    }
+  }
+}
