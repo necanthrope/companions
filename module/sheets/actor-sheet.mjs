@@ -13,7 +13,10 @@ export class CompanionsActorSheet extends ActorSheet {
       template: "systems/companions/templates/actor/actor-sheet.html",
       width: 1200,
       height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
+      tabs: [
+          { navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" },
+          {navSelector: ".move-tabs", contentSelector: ".move-tab", initial: "basic"}
+      ]
     });
   }
 
@@ -85,8 +88,13 @@ export class CompanionsActorSheet extends ActorSheet {
       for (const movestat of move.stat) {
         var roll = {};
         roll.stat = movestat;
-        roll.bonus = statObj[movestat];
+        roll.bonus = Math.abs(statObj[movestat]);
         roll.statLabel = statLabelObj[movestat];
+        let operator = "+";
+        if (statObj[movestat] < 0) {
+          operator = "-";
+        }
+        roll.operator = operator;
         move.rolls.push(roll);
       }
       context.system.moves.basic[key] = move;
@@ -216,7 +224,8 @@ export class CompanionsActorSheet extends ActorSheet {
 
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
-      let label = dataset.label ? `${dataset.label} (+${dataset.statlabel})`  : '[unknown]';
+      //let label = dataset.label ? `${dataset.label} (+${dataset.statlabel})|${dataset.movekey}`  : '[unknown]';
+      let label = dataset.movekey ? `${dataset.movekey}|${dataset.statlabel}`  : '[unknown]';
       let roll = new Roll(dataset.roll, this.actor.getRollData());
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),

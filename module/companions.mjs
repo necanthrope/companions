@@ -29,14 +29,10 @@ Hooks.once('init', async function() {
   CONFIG.COMPANIONS.BASICMOVES = BASICMOVES;
   CONFIG.COMPANIONS.VORTEXMOVES = VORTEXMOVES;
 
-  /**
-   * Set an initiative formula for the system
-   * @type {String}
-   */
-  //CONFIG.Combat.initiative = {
-  //  formula: "1d20 + @abilities.dex.mod",
-  //  decimals: 2
-  //};
+  CONFIG.COMPANIONS.ALLMOVES = {
+    ...CONFIG.COMPANIONS.BASICMOVES.moves,
+    ...CONFIG.COMPANIONS.VORTEXMOVES.moves
+  };
 
   // Define custom Document classes
   CONFIG.Actor.documentClass = CompanionsActor;
@@ -79,6 +75,59 @@ Hooks.once("ready", async function() {
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
   Hooks.on("hotbarDrop", (bar, data, slot) => createItemMacro(data, slot));
 });
+
+
+
+/* -------------------------------------------- */
+/*  Hook to customize chat message for moves    */
+/* -------------------------------------------- */
+Hooks.on('renderChatMessage', (chatMessage, [html], messageData) => {
+  decorateDieRoll(html, chatMessage, messageData);
+})
+
+function decorateDieRoll(html, chatMessage, messageData) {
+  if (chatMessage.flavor.includes("|")) {
+    const flavorSplit = chatMessage.flavor.split("|");
+    const moveKey = flavorSplit[0];
+    const statLabel = flavorSplit[1];
+    if (Object.keys(CONFIG.COMPANIONS.ALLMOVES).includes(moveKey)) {
+      const move = CONFIG.COMPANIONS.ALLMOVES[moveKey];
+      if (move.type === "roll") {
+        const newFlavor= move.title + " (" + "+" + statLabel + ")";
+        html.innerHTML = html.innerHTML.replace(chatMessage.flavor,newFlavor);
+        chatMessage.flavor = newFlavor;
+        const resultText = getMoveResultText(move, chatMessage.rolls[0]._total);
+        html.innerHTML = html.innerHTML + resultText;
+      }
+    }
+  }
+}
+
+function getMoveResultText(move, rollResult) {
+  let resultHeader = "";
+  let resultText = "";
+  if (rollResult < 7) {
+    resultHeader = "<em>Miss.</em> ";
+    if (move.miss === "") {
+      resultText = "The MC says what happens next."
+    } else {
+      resultText = move.miss;
+    }
+  }
+  if (rollResult >= 7 && rollResult < 10) {
+    resultHeader = "<em>Partial Hit!</em> ";
+    resultText =  move.partialHit;
+  }
+  if (rollResult >= 10) {
+    resultHeader = "<em>FULL HIT!</em> ";
+    resultText = move.fullHit;
+  }
+  let result = "<h4>" + resultHeader + "</h4>\n<p>" + resultText + "</p>"
+  if (move.options !== "" && rollResult >= 7) {
+    result = result+ "\n<p>" + move.options + "</p>";
+  }
+  return result;
+}
 
 /* -------------------------------------------- */
 /*  Hotbar Macros                               */

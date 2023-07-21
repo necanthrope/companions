@@ -23,7 +23,19 @@
 </ol>
 -->
 
-          <div class="abilities flexcol">
+<nav class="move-tabs" data-group="moves">
+	<a class="move-tabs" data-tab="basic" data-group="moves">Basic Moves</a>
+	<a class="move-tabs" data-tab="playbook" data-group="moves">Playbook Moves</a>
+	<a class="move-tabs" data-tab="vortex" data-group="moves">Vortex Moves</a>
+	<a class="move-tabs" data-tab="other" data-group="moves">Other Moves</a>
+</nav>
+
+<section class="move-tab">
+
+	<div class="abilities flexcol tab" data-group="moves" data-tab="vortex">
+		boo
+	</div>
+          <div class="abilities flexcol tab" data-group="moves" data-tab="basic">
             {{#each system.moves.basic}}
             <div class="ability flexrow flex-group-center">
 		    <!--
@@ -43,13 +55,10 @@
               To make this move, 
 	      {{#each this.rolls as |roll key|}}
 	      <span class="ability-mod rollable" 
-		    data-roll="2d6+{{roll.bonus}}" 
+		    data-roll="2d6{{roll.operator}}{{roll.bonus}}"
 		    data-label="{{../this.title}}"
-		    data-fullHit="{{../this.fullHit}}"
-		    data-partialHit="{{../this.partialHit}}"
-		    data-miss="{{../this.miss}}"
-		    data-options="{{../this.options}}"
 		    data-statLabel="{{roll.statLabel}}"
+            data-movekey="{{@../key}}"
 		    >Roll +{{roll.statLabel}}</span>{{#unless @last}} OR {{/unless}}{{/each}}.
 	    </div>
 	    {{/if}}
@@ -57,3 +66,4 @@
 	    {{log this}}
           </div>
 
+</section>
