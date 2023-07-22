@@ -27,3 +27,28 @@ COMPANIONS.abilityLabels = {
   "clever": "Clever",
   "vortex": "Vortex"
 };
+
+COMPANIONS.playbooks = {
+    "agent" : {
+        "title" : "The Agent",
+    },
+    "commander" : {
+        "title" : "The Commander",
+    },
+    "construct" : {
+        "title" : "The Construct",
+    },
+    "touchstone" : {
+        "title" : "The Touchstone",
+    },
+    "warriorPoet" :{
+        "title" : "The Warrior-Poet",
+    },
+    "whiz" : {
+        "title" : "The Whiz",
+    },
+    "witness" : {
+        "title" : "The Witness",
+    },
+};
+

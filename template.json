@@ -14,16 +14,12 @@
           "max": 6
         },
         "biography": "" ,
-        "moves" : {},
         "look": ""
       }
     },
     "character": {
       "templates": ["base"],
       "attributes": {
-        "level": {
-          "value": 1
-        }
       },
       "abilities": {
         "cool": {
@@ -41,7 +37,11 @@
         "vortex": {
           "value": 0
         }
-      }
+      },
+      "playbook" : "",
+      "lockPlaybook" : false,
+      "moves" : {},
+      "takenMoves" : []
     },
     "npc": {
       "templates": ["base"],

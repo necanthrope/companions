@@ -24,46 +24,66 @@
 -->
 
 <nav class="move-tabs" data-group="moves">
-	<a class="move-tabs" data-tab="basic" data-group="moves">Basic Moves</a>
-	<a class="move-tabs" data-tab="playbook" data-group="moves">Playbook Moves</a>
-	<a class="move-tabs" data-tab="vortex" data-group="moves">Vortex Moves</a>
-	<a class="move-tabs" data-tab="other" data-group="moves">Other Moves</a>
+    <a class="move-tabs" data-tab="basic" data-group="moves">Basic Moves</a>
+    <a class="move-tabs" data-tab="playbook" data-group="moves">Playbook Moves</a>
+    <a class="move-tabs" data-tab="vortex" data-group="moves">Vortex Moves</a>
+    <a class="move-tabs" data-tab="other" data-group="moves">Other Moves</a>
 </nav>
 
 <section class="move-tab">
 
-	<div class="abilities flexcol tab" data-group="moves" data-tab="vortex">
-		boo
-	</div>
-          <div class="abilities flexcol tab" data-group="moves" data-tab="basic">
-            {{#each system.moves.basic}}
-            <div class="ability flexrow flex-group-center">
-		    <!--
-		    <label for="system.moves.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="2d6+{{move.bonus}}" data-label="{{move.title}}">{{move.title}}</label>
-		    <span class="ability-mod rollable" data-roll="2d6+{{move.bonus}}" data-label="{{move.stat}}" data-move="{{move}}">{{#if (eq move.type "roll")}}{{numberFormat move.bonus decimals=0 sign=true}}{{/if}}</span>
-		    -->
-		    <label for="{{@key}}" class="resource-label flexlarge align-left">{{this.title}}</label>
-            </div>
-	    <div>
-              {{{this.description}}}
-	      {{#if (ne this.options "")}}
-	      {{{this.options}}}
-	      {{/if}}
-            </div>
-	    {{#if (gt this.stat.length 0)}}
-	    <div>
-              To make this move, 
-	      {{#each this.rolls as |roll key|}}
-	      <span class="ability-mod rollable" 
-		    data-roll="2d6{{roll.operator}}{{roll.bonus}}"
-		    data-label="{{../this.title}}"
-		    data-statLabel="{{roll.statLabel}}"
-            data-movekey="{{@../key}}"
-		    >Roll +{{roll.statLabel}}</span>{{#unless @last}} OR {{/unless}}{{/each}}.
-	    </div>
-	    {{/if}}
-            {{/each}}
-	    {{log this}}
-          </div>
+    <div class="abilities flexcol tab" data-group="moves" data-tab="basic">
+        {{#each system.moves.basic}}
+        <div class="ability flexrow flex-group-center">
+            <label for="{{@key}}" class="resource-label flexlarge align-left">{{this.title}}</label>
+        </div>
+        <div>
+            {{{this.description}}}
+            {{#if (ne this.options "")}}
+            {{{this.options}}}
+            {{/if}}
+        </div>
+        {{#if (gt this.stat.length 0)}}
+        <div>
+            To make this move,
+            {{#each this.rolls as |roll key|}}
+            <span class="ability-mod rollable"
+                  data-roll="2d6{{roll.operator}}{{roll.bonus}}"
+                  data-label="{{../this.title}}"
+                  data-statLabel="{{roll.statLabel}}"
+                  data-movekey="{{@../key}}"
+            >Roll +{{roll.statLabel}}</span>{{#unless @last}} OR {{/unless}}{{/each}}.
+        </div>
+        {{/if}}
+        {{/each}}
+        {{log this}}
+    </div>
+    <div class="abilities flexcol tab" data-group="moves" data-tab="playbook">
+        {{#each system.moves.playbook}}
+        <div class="ability flexrow flex-group-center">
+            <label for="{{@key}}" class="resource-label flexlarge align-left">{{this.title}}</label>
+        </div>
+        <div>
+            {{{this.description}}}
+            {{#if (ne this.options "")}}
+            {{{this.options}}}
+            {{/if}}
+        </div>
+        {{#if (gt this.stat.length 0)}}
+        <div>
+            To make this move,
+            {{#each this.rolls as |roll key|}}
+            <span class="ability-mod rollable"
+                  data-roll="2d6{{roll.operator}}{{roll.bonus}}"
+                  data-label="{{../this.title}}"
+                  data-statLabel="{{roll.statLabel}}"
+                  data-movekey="{{@../key}}"
+            >Roll +{{roll.statLabel}}</span>{{#unless @last}} OR {{/unless}}{{/each}}.
+        </div>
+        {{/if}}
+        {{/each}}
+        {{log this}}
+    </div>
+    </div>
 
 </section>

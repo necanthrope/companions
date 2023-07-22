@@ -63,6 +63,15 @@
         <aside class="sidebar">
           <div class="header-fields">
             <h2 class="charname">
+              <label for="system.playbook" class="resource-label">Playbook</label>
+              <select id="playbook-selector" name="system.playbook" {{#if (ne "" system.playbook)}}disabled{{/if}}>
+                <option value="" disabled selected hidden>Select your Playbook</option>
+                {{#each system.playbooks}}
+                <option value = "{{@key}}" {{#if (eq @key ../system.playbook)}} selected {{/if}}>{{this.title}}</option>
+                {{/each}}
+              </select><button onclick="document.getElementById('playbook-selector').removeAttribute('disabled')">unlock</button>
+            </h2>
+            <h2 class="charname">
               <label for="actor.name" class="resource-label">Name</label>
               <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
             </h2>

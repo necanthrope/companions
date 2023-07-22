@@ -9,6 +9,10 @@ import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { COMPANIONS } from "./helpers/config.mjs";
 import { BASICMOVES } from "./helpers/basicMoves.mjs";
 import { VORTEXMOVES } from "./helpers/vortexMoves.mjs";
+// Import playbook moves
+import { AGENTMOVES } from "./helpers/playbooks/agentMoves.mjs";
+import { COMMANDERMOVES } from "./helpers/playbooks/commanderMoves.mjs";
+import { CONSTRUCTMOVES } from "./helpers/playbooks/constructMoves.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -28,10 +32,19 @@ Hooks.once('init', async function() {
   CONFIG.COMPANIONS = COMPANIONS;
   CONFIG.COMPANIONS.BASICMOVES = BASICMOVES;
   CONFIG.COMPANIONS.VORTEXMOVES = VORTEXMOVES;
+  CONFIG.COMPANIONS.AGENTMOVES = AGENTMOVES;
+  CONFIG.COMPANIONS.COMMANDERMOVES = COMMANDERMOVES;
+  CONFIG.COMPANIONS.CONSTRUCTMOVES = CONSTRUCTMOVES;
 
   CONFIG.COMPANIONS.ALLMOVES = {
     ...CONFIG.COMPANIONS.BASICMOVES.moves,
-    ...CONFIG.COMPANIONS.VORTEXMOVES.moves
+    ...CONFIG.COMPANIONS.VORTEXMOVES.moves,
+    ...CONFIG.COMPANIONS.AGENTMOVES.playbook,
+    ...CONFIG.COMPANIONS.AGENTMOVES.romance,
+    ...CONFIG.COMPANIONS.COMMANDERMOVES.playbook,
+    ...CONFIG.COMPANIONS.COMMANDERMOVES.romance,
+    ...CONFIG.COMPANIONS.CONSTRUCTMOVES.playbook,
+    ...CONFIG.COMPANIONS.CONSTRUCTMOVES.romance,
   };
 
   // Define custom Document classes

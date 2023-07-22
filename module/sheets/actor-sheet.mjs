@@ -86,19 +86,46 @@ export class CompanionsActorSheet extends ActorSheet {
       let move = CONFIG.COMPANIONS.BASICMOVES.moves[key];
       move.rolls = [];
       for (const movestat of move.stat) {
-        var roll = {};
-        roll.stat = movestat;
-        roll.bonus = Math.abs(statObj[movestat]);
-        roll.statLabel = statLabelObj[movestat];
-        let operator = "+";
-        if (statObj[movestat] < 0) {
-          operator = "-";
-        }
-        roll.operator = operator;
-        move.rolls.push(roll);
+        this.buildMove(movestat, statObj, statLabelObj, move);
       }
       context.system.moves.basic[key] = move;
     }
+
+    // Build playbook data
+    context.system.playbooks = CONFIG.COMPANIONS.playbooks;
+
+    let playbookMoves = {};
+    playbookMoves["AGENTMOVES"] = CONFIG.COMPANIONS.AGENTMOVES;
+    playbookMoves["COMMANDERMOVES"] = CONFIG.COMPANIONS.COMMANDERMOVES;
+    playbookMoves["CONSTRUCTMOVES"] = CONFIG.COMPANIONS.CONSTRUCTMOVES;
+
+    // Build playbook moves object.
+    context.system.moves.playbook = {};
+    const moveKey = context.system.playbook.toUpperCase() + "MOVES";
+    if (Object.keys(playbookMoves).includes(moveKey)) {
+      for (const key in playbookMoves[moveKey]['playbook']) {
+        let move = playbookMoves[moveKey]['playbook'][key];
+        move.rolls = [];
+        for (const movestat of move.stat) {
+          this.buildMove(movestat, statObj, statLabelObj, move);
+        }
+        context.system.moves.playbook[key] = move;
+      }
+    }
+
+  }
+
+  buildMove(movestat, statObj, statLabelObj, move) {
+    var roll = {};
+    roll.stat = movestat;
+    roll.bonus = Math.abs(statObj[movestat]);
+    roll.statLabel = statLabelObj[movestat];
+    let operator = "+";
+    if (statObj[movestat] < 0) {
+      operator = "-";
+    }
+    roll.operator = operator;
+    move.rolls.push(roll);
   }
 
   /**

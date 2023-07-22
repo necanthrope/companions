@@ -1,16 +1,14 @@
-import {COMPANIONS} from "../config.mjs";
-
 export const AGENTMOVES = {};
 
 AGENTMOVES.playbook = {
   "notMyFirstTimeAtTheDance" : {
     "title" : "Not My First Time at the Dance",
-    "description" : "You’re from the future, and have direct experience with technologies from all over spacetime. When presented with a device from a period other than your place of birth or modern Britain, substitute your Cool for Vortex when Using Unfamiliar Technology. Additionally, if you hit on that move, you gain insight into who made the device, and what other applications it may have.",
+    "description" : "You’re from the future, and have direct experience with technologies from all over spacetime. When Using Unfamiliar Technology, roll +Cool instead of +Vortex. Additionally, if you hit on that move, you gain insight into who made the device, and what other applications it may have.",
     "type" : "roll",
     "stat" : ["COMPANIONS.AbilityCool"],
-    "fullHit" : "The MC will tell you something new and interesting about the current situation, and might ask you a question or two; answer them. The MC will give you good detail. If you already know all there is to know, the MC will tell you that.",
-    "partialHit" : "The MC will tell you something new and interesting about the current situation, and might ask you a question or two; answer them. The MC will give you a good impression. If you already know all there is to know, the MC will tell you that.",
-    "miss" : "",
+    "fullHit" : "It works without problems.",
+    "partialHit" : "It works once, but it breaks. Only a Whiz or an appropriate NPC can fix it.",
+    "miss" : "Someone gets hurt, the device is destroyed, or there are unforeseen consequences.",
     "options" : "",
   },
   "youDontStandAChance" : {
@@ -45,7 +43,7 @@ AGENTMOVES.playbook = {
   },
   "becauseILoveYou" : {
     "title" : "Because I Love You",
-    "description" : "When you lie to someone with whom you are Romantically  Entangled in order to protect them from a horrible fate, mark History with them. If they figure out the truth, their History with you resets, and you mark Experience.",
+    "description" : "When you lie to someone with whom you are Romantically Entangled, mark History with them. If they figure out the truth, their History with you resets, and you mark Experience.",
     "type" : "now",
     "stat" : [],
     "fullHit" : "",
