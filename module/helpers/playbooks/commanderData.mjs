@@ -14,7 +14,7 @@ CommanderData.moves = {
         },
         "rememberTheFallen": {
             "title": "Remember the Fallen",
-            "description": "You feel personally responsible for your Team, beyond mere duty. When you order one or more of your Team members to their deaths, take the following based on the Team member whom you held in the highest esteem:",
+            "description": "You feel personally responsible for your Team, beyond mere duty. When you order one or more of your Team members to their deaths, take the following based on the Team member you held in the highest esteem:",
             "type": "now",
             "stat": [],
             "fullHit": "",
@@ -24,7 +24,7 @@ CommanderData.moves = {
         },
         "secureThePerimeter": {
             "title": "Secure the Perimeter",
-            "description": "When you risk your Team by sending them to secure a dangerous or unknown area, roll +members sent. On a 10+, ask questions about the area as if you got a full hit on Read a Dire Situation. On a 7–9, you may ask the same questions, but reduce all their Fates by 1. On a miss, one or more of them dies (MC’s choice).",
+            "description": "When you risk your Team by sending them to secure a dangerous or unknown area, roll +members sent, maximum +3. On a 10+, ask questions about the area as if you got a full hit on Read a Dire Situation. On a 7–9, you may ask the same questions, but reduce all their Fates by 1. On a miss, one or more of them dies (MC’s choice).",
             "type": "roll",
             "stat": ["COMPANIONS.Ability"],
             "fullHit": "Ask questions about the area as if you got a full hit on Read a Dire Situation.",

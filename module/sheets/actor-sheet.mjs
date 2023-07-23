@@ -98,6 +98,7 @@ export class CompanionsActorSheet extends ActorSheet {
     playbookMoves["AGENTMOVES"] = CONFIG.COMPANIONS.AGENTDATA.moves.playbook;
     playbookMoves["COMMANDERMOVES"] = CONFIG.COMPANIONS.COMMANDERDATA.moves.playbook;
     playbookMoves["CONSTRUCTMOVES"] = CONFIG.COMPANIONS.CONSTRUCTDATA.moves.playbook;
+    playbookMoves["TOUCHSTONEMOVES"] = CONFIG.COMPANIONS.TOUCHSTONEDATA.moves.playbook;
 
     // Build playbook moves object.
     context.system.moves.playbook = {};
