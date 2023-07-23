@@ -95,16 +95,16 @@ export class CompanionsActorSheet extends ActorSheet {
     context.system.playbooks = CONFIG.COMPANIONS.playbooks;
 
     let playbookMoves = {};
-    playbookMoves["AGENTMOVES"] = CONFIG.COMPANIONS.AGENTMOVES;
-    playbookMoves["COMMANDERMOVES"] = CONFIG.COMPANIONS.COMMANDERMOVES;
-    playbookMoves["CONSTRUCTMOVES"] = CONFIG.COMPANIONS.CONSTRUCTMOVES;
+    playbookMoves["AGENTMOVES"] = CONFIG.COMPANIONS.AGENTDATA.moves.playbook;
+    playbookMoves["COMMANDERMOVES"] = CONFIG.COMPANIONS.COMMANDERDATA.moves.playbook;
+    playbookMoves["CONSTRUCTMOVES"] = CONFIG.COMPANIONS.CONSTRUCTDATA.moves.playbook;
 
     // Build playbook moves object.
     context.system.moves.playbook = {};
     const moveKey = context.system.playbook.toUpperCase() + "MOVES";
     if (Object.keys(playbookMoves).includes(moveKey)) {
-      for (const key in playbookMoves[moveKey]['playbook']) {
-        let move = playbookMoves[moveKey]['playbook'][key];
+      for (const key in playbookMoves[moveKey]) {
+        let move = playbookMoves[moveKey][key];
         move.rolls = [];
         for (const movestat of move.stat) {
           this.buildMove(movestat, statObj, statLabelObj, move);
