@@ -84,10 +84,7 @@ export class CompanionsActorSheet extends ActorSheet {
     context.system.moves.basic = {};
     for (const key in CONFIG.COMPANIONS.BASICDATA.moves.basic) {
       let move = CONFIG.COMPANIONS.BASICDATA.moves.basic[key];
-      move.rolls = [];
-      for (const movestat of move.stat) {
-        this.buildMove(movestat, statObj, statLabelObj, move);
-      }
+      this.buildMove(statObj, statLabelObj, move);
       context.system.moves.basic[key] = move;
     }
 
@@ -106,27 +103,43 @@ export class CompanionsActorSheet extends ActorSheet {
     if (Object.keys(playbookMoves).includes(moveKey)) {
       for (const key in playbookMoves[moveKey]) {
         let move = playbookMoves[moveKey][key];
-        move.rolls = [];
-        for (const movestat of move.stat) {
-          this.buildMove(movestat, statObj, statLabelObj, move);
-        }
+        this.buildMove(statObj, statLabelObj, move);
         context.system.moves.playbook[key] = move;
       }
     }
 
   }
 
-  buildMove(movestat, statObj, statLabelObj, move) {
-    var roll = {};
-    roll.stat = movestat;
-    roll.bonus = Math.abs(statObj[movestat]);
-    roll.statLabel = statLabelObj[movestat];
-    let operator = "+";
-    if (statObj[movestat] < 0) {
-      operator = "-";
+  buildMove(statObj, statLabelObj, move) {
+    move.rolls = [];
+    for (const movestat of move.stat) {
+      let operator = "+";
+      var roll = {};
+      if (typeof movestat === "string") {
+        if (statObj[movestat] < 0) {
+          operator = "-";
+        }
+        roll.stat = movestat;
+        roll.bonus = Math.abs(statObj[movestat]);
+        roll.statLabel = statLabelObj[movestat];
+      } else if (typeof movestat === "object") {
+        if (movestat['value'] < 0) {
+          operator = "-";
+        }
+        roll.stat = "special";
+        roll.bonus = Math.abs(movestat['value']);
+        roll.statLabel = movestat['label'];
+      } else {
+        if (movestat < 0) {
+          operator = "-";
+        }
+        roll.stat = "special";
+        roll.bonus = Math.abs(movestat);
+        roll.statLabel = movestat;
+      }
+      roll.operator = operator;
+      move.rolls.push(roll);
     }
-    roll.operator = operator;
-    move.rolls.push(roll);
   }
 
   /**

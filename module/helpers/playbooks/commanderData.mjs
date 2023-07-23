@@ -26,7 +26,19 @@ CommanderData.moves = {
             "title": "Secure the Perimeter",
             "description": "When you risk your Team by sending them to secure a dangerous or unknown area, roll +members sent, maximum +3. On a 10+, ask questions about the area as if you got a full hit on Read a Dire Situation. On a 7–9, you may ask the same questions, but reduce all their Fates by 1. On a miss, one or more of them dies (MC’s choice).",
             "type": "roll",
-            "stat": ["COMPANIONS.Ability"],
+            "stat": [
+                {
+                    "value":1,
+                    "label":"1 Team member"
+                },
+                {
+                    "value":2,
+                    "label":"2 Team members"
+                },
+                {
+                    "value":3,
+                    "label":"3 Team members"
+                }],
             "fullHit": "Ask questions about the area as if you got a full hit on Read a Dire Situation.",
             "partialHit": "Ask questions about the area as if you got a full hit on Read a Dire Situation, but reduce all sent Team members Fate by 1.",
             "miss": "One or more Team members die (MC's choice).",
