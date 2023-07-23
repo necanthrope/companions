@@ -82,8 +82,8 @@ export class CompanionsActorSheet extends ActorSheet {
 
     // Build basic moves object.
     context.system.moves.basic = {};
-    for (const key in CONFIG.COMPANIONS.BASICMOVES.moves) {
-      let move = CONFIG.COMPANIONS.BASICMOVES.moves[key];
+    for (const key in CONFIG.COMPANIONS.BASICDATA.moves.basic) {
+      let move = CONFIG.COMPANIONS.BASICDATA.moves.basic[key];
       move.rolls = [];
       for (const movestat of move.stat) {
         this.buildMove(movestat, statObj, statLabelObj, move);

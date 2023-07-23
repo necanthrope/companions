@@ -1,6 +1,6 @@
-export const AGENTMOVES = {};
+export const AgentData = {};
 
-AGENTMOVES.playbook = {
+AgentData.playbook = {
   "notMyFirstTimeAtTheDance" : {
     "title" : "Not My First Time at the Dance",
     "description" : "You’re from the future, and have direct experience with technologies from all over spacetime. When Using Unfamiliar Technology, roll +Cool instead of +Vortex. Additionally, if you hit on that move, you gain insight into who made the device, and what other applications it may have.",
@@ -63,7 +63,7 @@ AGENTMOVES.playbook = {
    },
 };
 
-AGENTMOVES.romance = {
+AgentData.romance = {
   "title" : "",
   "description" : "When you kiss someone with whom you are Romantically Entangled, take 2 hold. Spend 1 for 1 to instinctively know where they are. Take +1 ongoing to any move you make trying to save their life while you have hold.",
   "type" : "now",

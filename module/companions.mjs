@@ -7,12 +7,12 @@ import { CompanionsItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { COMPANIONS } from "./helpers/config.mjs";
-import { BASICMOVES } from "./helpers/basicMoves.mjs";
+import { BasicData } from "./helpers/basicData.mjs";
 import { VORTEXMOVES } from "./helpers/vortexMoves.mjs";
 // Import playbook moves
-import { AGENTMOVES } from "./helpers/playbooks/agentMoves.mjs";
-import { COMMANDERMOVES } from "./helpers/playbooks/commanderMoves.mjs";
-import { CONSTRUCTMOVES } from "./helpers/playbooks/constructMoves.mjs";
+import { AgentData } from "./helpers/playbooks/agentData.mjs";
+import { CommanderData } from "./helpers/playbooks/commanderData.mjs";
+import { ConstructData } from "./helpers/playbooks/constructData.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -30,15 +30,15 @@ Hooks.once('init', async function() {
 
   // Add custom constants for configuration.
   CONFIG.COMPANIONS = COMPANIONS;
-  CONFIG.COMPANIONS.BASICMOVES = BASICMOVES;
+  CONFIG.COMPANIONS.BASICDATA = BasicData;
   CONFIG.COMPANIONS.VORTEXMOVES = VORTEXMOVES;
-  CONFIG.COMPANIONS.AGENTMOVES = AGENTMOVES;
-  CONFIG.COMPANIONS.COMMANDERMOVES = COMMANDERMOVES;
-  CONFIG.COMPANIONS.CONSTRUCTMOVES = CONSTRUCTMOVES;
+  CONFIG.COMPANIONS.AGENTMOVES = AgentData;
+  CONFIG.COMPANIONS.COMMANDERMOVES = CommanderData;
+  CONFIG.COMPANIONS.CONSTRUCTMOVES = ConstructData;
 
   CONFIG.COMPANIONS.ALLMOVES = {
-    ...CONFIG.COMPANIONS.BASICMOVES.moves,
-    ...CONFIG.COMPANIONS.VORTEXMOVES.moves,
+    ...CONFIG.COMPANIONS.BASICDATA.moves.basic,
+    ...CONFIG.COMPANIONS.BASICDATA.moves.vortex,
     ...CONFIG.COMPANIONS.AGENTMOVES.playbook,
     ...CONFIG.COMPANIONS.AGENTMOVES.romance,
     ...CONFIG.COMPANIONS.COMMANDERMOVES.playbook,

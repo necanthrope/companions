@@ -1,6 +1,6 @@
-export const COMMANDERMOVES = {};
+export const CommanderData = {};
 
-COMMANDERMOVES.playbook = {
+CommanderData.playbook = {
   "intoTheBreach" : {
     "title" : "Into the Breach",
     "description" : "When a Team member makes a move in a Dire Situation, do the following in addition to whatever the move tells you to do: on a 10+, they survive; choose one Team member and increase their esteem by one. On a 7-9, one Team member of your choice is grievously wounded; reduce their Fate by one and mark experience. On a miss, in addition to whatever hard move the MC makes, you send one or more of them to their deaths. The MC decides who.",
@@ -63,7 +63,7 @@ COMMANDERMOVES.playbook = {
    },
 };
 
-COMMANDERMOVES.romance = {
+CommanderData.romance = {
   "title" : "",
   "description" : "Mark experience whenever you or your orders come between a Team member — including you — and their romantic entanglement.",
   "type" : "now",
