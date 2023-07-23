@@ -1,5 +1,3 @@
-import {VORTEXMOVES} from "./vortexMoves.mjs";
-
 export const BasicData = {};
 
 BasicData.moves = {

@@ -8,7 +8,6 @@ import { CompanionsItemSheet } from "./sheets/item-sheet.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { COMPANIONS } from "./helpers/config.mjs";
 import { BasicData } from "./helpers/basicData.mjs";
-import { VORTEXMOVES } from "./helpers/vortexMoves.mjs";
 // Import playbook moves
 import { AgentData } from "./helpers/playbooks/agentData.mjs";
 import { CommanderData } from "./helpers/playbooks/commanderData.mjs";
@@ -31,7 +30,6 @@ Hooks.once('init', async function() {
   // Add custom constants for configuration.
   CONFIG.COMPANIONS = COMPANIONS;
   CONFIG.COMPANIONS.BASICDATA = BasicData;
-  CONFIG.COMPANIONS.VORTEXMOVES = VORTEXMOVES;
   CONFIG.COMPANIONS.AGENTMOVES = AgentData;
   CONFIG.COMPANIONS.COMMANDERMOVES = CommanderData;
   CONFIG.COMPANIONS.CONSTRUCTMOVES = ConstructData;
