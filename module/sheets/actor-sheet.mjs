@@ -96,15 +96,34 @@ export class CompanionsActorSheet extends ActorSheet {
     playbookMoves["COMMANDERMOVES"] = CONFIG.COMPANIONS.COMMANDERDATA.moves.playbook;
     playbookMoves["CONSTRUCTMOVES"] = CONFIG.COMPANIONS.CONSTRUCTDATA.moves.playbook;
     playbookMoves["TOUCHSTONEMOVES"] = CONFIG.COMPANIONS.TOUCHSTONEDATA.moves.playbook;
+    playbookMoves["WARRIORPOETMOVES"] = CONFIG.COMPANIONS.WARRIORPOETDATA.moves.playbook;
 
     // Build playbook moves object.
     context.system.moves.playbook = {};
-    const moveKey = context.system.playbook.toUpperCase() + "MOVES";
-    if (Object.keys(playbookMoves).includes(moveKey)) {
-      for (const key in playbookMoves[moveKey]) {
-        let move = playbookMoves[moveKey][key];
+    const playbookMoveKey = context.system.playbook.toUpperCase() + "MOVES";
+    if (Object.keys(playbookMoves).includes(playbookMoveKey)) {
+      for (const key in playbookMoves[playbookMoveKey]) {
+        let move = playbookMoves[playbookMoveKey][key];
         this.buildMove(statObj, statLabelObj, move);
         context.system.moves.playbook[key] = move;
+      }
+    }
+
+    let romanceMoves = {};
+    romanceMoves["AGENTMOVES"] = CONFIG.COMPANIONS.AGENTDATA.moves.romance;
+    romanceMoves["COMMANDERMOVES"] = CONFIG.COMPANIONS.COMMANDERDATA.moves.romance;
+    romanceMoves["CONSTRUCTMOVES"] = CONFIG.COMPANIONS.CONSTRUCTDATA.moves.romance;
+    romanceMoves["TOUCHSTONEMOVES"] = CONFIG.COMPANIONS.TOUCHSTONEDATA.moves.romance;
+    romanceMoves["WARRIORPOETMOVES"] = CONFIG.COMPANIONS.WARRIORPOETDATA.moves.romance;
+
+    // Build playbook moves object.
+    context.system.moves.romance = {};
+    const romanceMoveKey = context.system.playbook.toUpperCase() + "MOVES";
+    if (Object.keys(romanceMoves).includes(romanceMoveKey)) {
+      for (const key in romanceMoves[romanceMoveKey]) {
+        let move = romanceMoves[romanceMoveKey][key];
+        this.buildMove(statObj, statLabelObj, move);
+        context.system.moves.romance[key] = move;
       }
     }
 
