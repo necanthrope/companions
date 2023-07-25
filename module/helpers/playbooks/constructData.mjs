@@ -89,3 +89,11 @@ ConstructData.tags = {
         "description" : "As with things’ tags. You are constructed from Gallifreyan technology.",
     },
 };
+
+ConstructData.bonds = {
+    1 : {
+        "1stText" : "",
+        "3rdText" : "",
+        "bonus" : 1
+    },
+};

@@ -26,3 +26,11 @@ WitnessData.moves = {
         }
     }
 };
+
+WitnessData.bonds = {
+    1 : {
+        "1stText" : "",
+        "3rdText" : "",
+        "bonus" : 1
+    },
+};

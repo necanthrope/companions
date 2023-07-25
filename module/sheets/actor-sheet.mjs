@@ -127,6 +127,60 @@ export class CompanionsActorSheet extends ActorSheet {
       }
     }
 
+    // Build data for Bonds & History section
+    this.buildBonds(context);
+
+    console.log("done with setup");
+  }
+
+
+  buildBonds(context) {
+
+
+    // Build Bonds data array
+    let bonds = {};
+    bonds["AGENTBONDS"] = structuredClone(CONFIG.COMPANIONS.AGENTDATA.bonds);
+    bonds["COMMANDERBONDS"] = CONFIG.COMPANIONS.COMMANDERDATA.bonds;
+    bonds["CONSTRUCTBONDS"] = CONFIG.COMPANIONS.CONSTRUCTDATA.bonds;
+    bonds["TOUCHSTONEBONDS"] = CONFIG.COMPANIONS.TOUCHSTONEDATA.bonds;
+    bonds["WARRIORPOETBONDS"] = CONFIG.COMPANIONS.WARRIORPOETDATA.bonds;
+
+    // Build playbook bonds object.
+    context.system.bonds = {};
+    const playbookBondKey = context.system.playbook.toUpperCase() + "BONDS";
+    if (Object.keys(bonds).includes(playbookBondKey)) {
+      for (const bondId in bonds[playbookBondKey]) {
+        let charNameWidget = this.buildBondNameList(context, bondId);
+        context.system.bonds[bondId] = bonds[playbookBondKey][bondId];
+        context.system.bonds[bondId]['1stText'] = context.system.bonds[bondId]['1stText'].replace(/%s/, charNameWidget);
+      }
+    }
+  }
+
+  buildBondNameList(context, bondId) {
+    // Build a list of other characters for Bonds.
+    let charNameWidget = '<select name="system.bondNames.' + bondId + '">\n';
+    let bondSelected = context.system.bondNames.hasOwnProperty(bondId);
+    let defaultSelection = " selected";
+    if (!bondSelected) {
+      defaultSelection = "selected";
+    }
+    charNameWidget = charNameWidget + "<option disabled " + defaultSelection + " hidden>Select</option>\n";
+    context.system.characters = [];
+    for (const i in game.actors.tree.entries) {
+      let actor = game.actors.tree.entries[i];
+      if (actor.id !== this.object._id) {
+        let selected = ""
+        if (bondSelected) {
+          if (actor.name === Reflect.get(context.system.bondNames, bondId)) {
+            selected = " selected";
+          }
+        }
+        context.system.characters.push(actor.name);
+        charNameWidget = charNameWidget + "<option" + selected + ">" + actor.name + "</option>\n";
+      }
+    }
+    return charNameWidget + "</select>\n\n";
   }
 
   buildMove(statObj, statLabelObj, move) {

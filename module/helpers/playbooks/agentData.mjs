@@ -78,6 +78,34 @@ AgentData.moves = {
 
 };
 
+AgentData.bonds = {
+    1 : {
+        "1stText" : "%s knows something about me that I wish they didn’t.",
+        "3rdText" : "%s knows something about %o that they wish they didn’t.",
+        "bonus" : 1
+    },
+    2 : {
+        "1stText" : "",
+        "3rdText" : "",
+        "bonus" : 1
+    },
+    3 : {
+        "1stText" : "",
+        "3rdText" : "",
+        "bonus" : 1
+    },
+    4 : {
+        "1stText" : "",
+        "3rdText" : "",
+        "bonus" : 1
+    },
+    5 : {
+        "1stText" : "",
+        "3rdText" : "",
+        "bonus" : 1
+    },
+};
+
 AgentData.advances = {
     "bumpBold": {
         text: "+1 Bold (max +2)",
@@ -107,7 +135,6 @@ AgentData.advances = {
         text: "A new move from another playbook",
         types: ["early"],
     },
-
     "vortexMove": {
         text: "Take any Vortex Move",
         types: ["early", "late"],

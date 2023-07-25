@@ -93,6 +93,19 @@
             </div>
             {{/each}}
           </div>
+
+          <!-- bonds & history -->
+          <div>
+            <h2>Bonds</h2>
+            <ul>
+            {{#each system.bonds}}
+              <li>
+               {{{this.1stText}}}
+              </li>
+            {{/each}}
+            </ul>
+          </div>
+
         </aside>
 
         {{!-- For the main features list, span the right two columns --}}
