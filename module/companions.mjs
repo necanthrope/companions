@@ -14,6 +14,8 @@ import { CommanderData } from "./helpers/playbooks/commanderData.mjs";
 import { ConstructData } from "./helpers/playbooks/constructData.mjs";
 import { TouchstoneData } from "./helpers/playbooks/touchstoneData.mjs";
 import { WarriorPoetData } from "./helpers/playbooks/warriorPoetData.mjs";
+import { WhizData } from "./helpers/playbooks/whizData.mjs";
+import { WitnessData } from "./helpers/playbooks/witnessData.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -37,6 +39,8 @@ Hooks.once('init', async function() {
   CONFIG.COMPANIONS.CONSTRUCTDATA = ConstructData;
   CONFIG.COMPANIONS.TOUCHSTONEDATA = TouchstoneData;
   CONFIG.COMPANIONS.WARRIORPOETDATA = WarriorPoetData;
+  CONFIG.COMPANIONS.WHIZDATA = WhizData;
+  CONFIG.COMPANIONS.WITNESSDATA = WitnessData;
 
   CONFIG.COMPANIONS.ALLMOVES = {
     ...CONFIG.COMPANIONS.BASICDATA.moves.basic,
@@ -51,6 +55,10 @@ Hooks.once('init', async function() {
     ...CONFIG.COMPANIONS.TOUCHSTONEDATA.moves.romance,
     ...CONFIG.COMPANIONS.WARRIORPOETDATA.moves.playbook,
     ...CONFIG.COMPANIONS.WARRIORPOETDATA.moves.romance,
+    ...CONFIG.COMPANIONS.WHIZDATA.moves.playbook,
+    ...CONFIG.COMPANIONS.WHIZDATA.moves.romance,
+    ...CONFIG.COMPANIONS.WITNESSDATA.moves.playbook,
+    ...CONFIG.COMPANIONS.WITNESSDATA.moves.romance,
   };
 
   // Define custom Document classes

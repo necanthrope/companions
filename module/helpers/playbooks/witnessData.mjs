@@ -29,8 +29,7 @@ WitnessData.moves = {
 
 WitnessData.bonds = {
     1 : {
-        "1stText" : "",
-        "3rdText" : "",
+        "historyText" : "%s was there for me on the Day She Died.",
         "bonus" : 1
     },
 };

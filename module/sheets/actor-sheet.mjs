@@ -97,6 +97,8 @@ export class CompanionsActorSheet extends ActorSheet {
     playbookMoves["CONSTRUCTMOVES"] = CONFIG.COMPANIONS.CONSTRUCTDATA.moves.playbook;
     playbookMoves["TOUCHSTONEMOVES"] = CONFIG.COMPANIONS.TOUCHSTONEDATA.moves.playbook;
     playbookMoves["WARRIORPOETMOVES"] = CONFIG.COMPANIONS.WARRIORPOETDATA.moves.playbook;
+    playbookMoves["WHIZMOVES"] = CONFIG.COMPANIONS.WHIZDATA.moves.playbook;
+    playbookMoves["WITNESSMOVES"] = CONFIG.COMPANIONS.WITNESSDATA.moves.playbook;
 
     // Build playbook moves object.
     context.system.moves.playbook = {};
@@ -115,6 +117,8 @@ export class CompanionsActorSheet extends ActorSheet {
     romanceMoves["CONSTRUCTMOVES"] = CONFIG.COMPANIONS.CONSTRUCTDATA.moves.romance;
     romanceMoves["TOUCHSTONEMOVES"] = CONFIG.COMPANIONS.TOUCHSTONEDATA.moves.romance;
     romanceMoves["WARRIORPOETMOVES"] = CONFIG.COMPANIONS.WARRIORPOETDATA.moves.romance;
+    romanceMoves["WHIZMOVES"] = CONFIG.COMPANIONS.WHIZDATA.moves.romance;
+    romanceMoves["WITNESSMOVES"] = CONFIG.COMPANIONS.WITNESSDATA.moves.romance;
 
     // Build playbook moves object.
     context.system.moves.romance = {};
@@ -144,6 +148,8 @@ export class CompanionsActorSheet extends ActorSheet {
     bonds["CONSTRUCTBONDS"] = CONFIG.COMPANIONS.CONSTRUCTDATA.bonds;
     bonds["TOUCHSTONEBONDS"] = CONFIG.COMPANIONS.TOUCHSTONEDATA.bonds;
     bonds["WARRIORPOETBONDS"] = CONFIG.COMPANIONS.WARRIORPOETDATA.bonds;
+    bonds["WHIZBONDS"] = CONFIG.COMPANIONS.WHIZDATA.bonds;
+    bonds["WITNESSBONDS"] = CONFIG.COMPANIONS.WITNESSDATA.bonds;
 
     // Build playbook bonds object.
     context.system.bonds = {};
@@ -151,21 +157,25 @@ export class CompanionsActorSheet extends ActorSheet {
     if (Object.keys(bonds).includes(playbookBondKey)) {
       for (const bondId in bonds[playbookBondKey]) {
         let charNameWidget = this.buildBondNameList(context, bondId);
-        context.system.bonds[bondId] = bonds[playbookBondKey][bondId];
-        context.system.bonds[bondId]['1stText'] = context.system.bonds[bondId]['1stText'].replace(/%s/, charNameWidget);
+        context.system.bonds[bondId] = structuredClone(bonds[playbookBondKey][bondId]);
+        context.system.bonds[bondId]['historyText'] = context.system.bonds[bondId]['historyText'].replace(/%s/, charNameWidget);
       }
     }
   }
 
   buildBondNameList(context, bondId) {
-    // Build a list of other characters for Bonds.
+      // Build a list of other characters for Bonds.
+    if (!context.system.hasOwnProperty("bondNames")) {
+      context.system.bondNames = {}
+    }
     let charNameWidget = '<select name="system.bondNames.' + bondId + '">\n';
-    let bondSelected = context.system.bondNames.hasOwnProperty(bondId);
-    let defaultSelection = " selected";
+    let defaultName = "Select"
+    let defaultSelection = "";
+    let bondSelected = context.system.bondNames.hasOwnProperty(bondId) && Reflect.get(context.system.bondNames, bondId) !== defaultName;
     if (!bondSelected) {
       defaultSelection = "selected";
     }
-    charNameWidget = charNameWidget + "<option disabled " + defaultSelection + " hidden>Select</option>\n";
+    charNameWidget = charNameWidget + "<option disabled " + defaultSelection + " hidden>" + defaultName + "</option>\n";
     context.system.characters = [];
     for (const i in game.actors.tree.entries) {
       let actor = game.actors.tree.entries[i];

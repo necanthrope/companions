@@ -10,7 +10,7 @@ WarriorPoetData.moves = {
             "fullHit": "Ask 3:",
             "partialHit": "Ask 1:",
             "miss": "",
-            "options": "<ul><li>Where’s my best escape route / way in / way past?</li><li>Who or what is the biggest threat?</li><li>Who is willing to talk?</li><li>What should I be on the lookout for?</li><li>Who stands to lose/gain the most?</li><li>Who is in control here?</li></ul>",
+            "options": "<ul><li>Where's my best escape route / way in / way past?</li><li>Who or what is the biggest threat?</li><li>Who is willing to talk?</li><li>What should I be on the lookout for?</li><li>Who stands to lose/gain the most?</li><li>Who is in control here?</li></ul>",
         },
         "theFavourOfTheGods": {
             "title": "The Favour of the Gods",
@@ -44,7 +44,7 @@ WarriorPoetData.moves = {
         },
         "theSongOfMyPeople": {
             "title": "The Song of my People",
-            "description": "When someone asks you for advice, tell them a story from your culture that applies to the situation, then roll +Bond with them. On a hit, they get a +1 ongoing while the story’s moral/advice applies. On a 10+, mark experience.",
+            "description": "When someone asks you for advice, tell them a story from your culture that applies to the situation, then roll +Bond with them. On a hit, they get a +1 ongoing while the story's moral/advice applies. On a 10+, mark experience.",
             "type": "roll",
             "stat": ["COMPANIONS.Ability"],
             "fullHit": "The person who heard your story gets +1 ongoing while the story's moral/advice applies. Also, mark experience.",
@@ -79,8 +79,23 @@ WarriorPoetData.moves = {
 
 WarriorPoetData.bonds = {
     1 : {
-        "1stText" : "",
-        "3rdText" : "",
+        "historyText" : "%s is my Elder. They have taught me much already.",
+        "bonus" : 2
+    },
+    2 : {
+        "historyText" : "I hold %s in contempt for their past actions.",
         "bonus" : 1
+    },
+    3 : {
+        "historyText" : "%s has shown me that violence isn't always the answer.",
+        "bonus" : 1
+    },
+    4 : {
+        "historyText" : "%s friendship is worth more to me than the Way of the Warrior.",
+        "bonus" : 3
+    },
+    5 : {
+        "historyText" : "I have sworn a blood oath to protect %s.",
+        "bonus" : 2
     },
 };

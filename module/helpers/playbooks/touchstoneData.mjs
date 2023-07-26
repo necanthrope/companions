@@ -4,13 +4,13 @@ TouchstoneData.moves = {
     "playbook": {
         "somethingAboutYou": {
             "title": "Something About You",
-            "description": "When you Read a Person, you may roll +Appeal instead of +Clever. When you do so, describe how you use your graces (social or otherwise) to compel the target of your scrutiny to reveal more than they normally would. On a 10+, They’re utterly unaware of how you’ve manipulated them.",
+            "description": "When you Read a Person, you may roll +Appeal instead of +Clever. When you do so, describe how you use your graces (social or otherwise) to compel the target of your scrutiny to reveal more than they normally would. On a 10+, They're utterly unaware of how you've manipulated them.",
             "type": "roll",
             "stat": ["COMPANIONS.AbilityAppeal"],
             "fullHit": "Hold 3. While interacting with the person you're reading, spend your hold to ask their player questions, 1 for 1. They're utterly unaware of how you've manipulated them.",
             "partialHit": "Hold 1. While interacting with the person you're reading, spend your hold to ask their player questions, 1 for 1. They may be aware of how you've manipulated them.",
             "miss": "",
-            "options": "<ul><li> Is your character telling the truth?</li><li> What’s your character really feeling?</li><li> What does your character intend to do?</li><li> What does your character wish I’d do?</li><li> How could I get your character to ...?</li></ul>",
+            "options": "<ul><li> Is your character telling the truth?</li><li> What's your character really feeling?</li><li> What does your character intend to do?</li><li> What does your character wish I'd do?</li><li> How could I get your character to ...?</li></ul>",
 
         },
         "suchAnUnbelievableFlirt": {
@@ -77,7 +77,7 @@ TouchstoneData.moves = {
     "romance": {
         "touchstoneRomance": {
             "title": "The Touchstone's Romance Move",
-            "description": "When you are Romantically Entangled with someone, you are each other’s lucky charm. When you have an intimate moment with this person, regardless of circumstances, you both take +1 forward. This works even at a distance, using communication technology.",
+            "description": "When you are Romantically Entangled with someone, you are each other's lucky charm. When you have an intimate moment with this person, regardless of circumstances, you both take +1 forward. This works even at a distance, using communication technology.",
             "type": "now",
             "stat": [],
             "fullHit": "",
@@ -90,8 +90,23 @@ TouchstoneData.moves = {
 
 TouchstoneData.bonds = {
     1 : {
-        "1stText" : "",
-        "3rdText" : "",
+        "historyText" : "%s once saved my family's lives. I'll never forget that.",
+        "bonus" : 3
+    },
+    2 : {
+        "historyText" : "I totally have a crush on %s.",
+        "bonus" : 1
+    },
+    3 : {
+        "historyText" : "%s is my current BFF. We have been spending a lot of time together lately.",
+        "bonus" : 2
+    },
+    4 : {
+        "historyText" : "%s is my confidante. We tell each other everything.",
+        "bonus" : 2
+    },
+    5 : {
+        "historyText" : "%s once totally stabbed me in the back. Not cool.",
         "bonus" : 1
     },
 };

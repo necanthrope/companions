@@ -4,7 +4,7 @@ AgentData.moves = {
     "playbook": {
         "notMyFirstTimeAtTheDance": {
             "title": "Not My First Time at the Dance",
-            "description": "You’re from the future, and have direct experience with technologies from all over spacetime. When Using Unfamiliar Technology, roll +Cool instead of +Vortex. Additionally, if you hit on that move, you gain insight into who made the device, and what other applications it may have.",
+            "description": "You're from the future, and have direct experience with technologies from all over spacetime. When Using Unfamiliar Technology, roll +Cool instead of +Vortex. Additionally, if you hit on that move, you gain insight into who made the device, and what other applications it may have.",
             "type": "roll",
             "stat": ["COMPANIONS.AbilityCool"],
             "fullHit": "It works without problems.",
@@ -17,8 +17,8 @@ AgentData.moves = {
             "description": "When you Convince with Reason or Emotions, roll +Cool instead of +Appeal. Additionally, you may seduce just about any living being that values reproduction.",
             "type": "roll",
             "stat": ["COMPANIONS.AbilityCool"],
-            "fullHit": "NPCs do what you want. For PCs, take both of the following:<ul><li>If they do it, mark experience.</li><li>If they don’t do it, they’re Acting under Pressure.</li></ul>",
-            "partialHit": "NPCs do what you want, but with some strings attached. For PCs, choose one of the following:<ul><li>If they do it, mark experience.</li><li>If they don’t do it, they’re Acting under Pressure.</li></ul>",
+            "fullHit": "NPCs do what you want. For PCs, take both of the following:<ul><li>If they do it, mark experience.</li><li>If they don't do it, they're Acting under Pressure.</li></ul>",
+            "partialHit": "NPCs do what you want, but with some strings attached. For PCs, choose one of the following:<ul><li>If they do it, mark experience.</li><li>If they don't do it, they're Acting under Pressure.</li></ul>",
             "miss": "",
             "options": "",
         },
@@ -34,12 +34,12 @@ AgentData.moves = {
         },
         "silverTongued": {
             "title": "Silver Tongued",
-            "description": "When you roll +Bond, you may roll +Appeal instead, if your move involves lies or other manipulation. On a miss, in addition to whatever move the MC elects to do, the person you are rolling against automatically resets their History with you. They’ve learned what a manipulative piece of work you can be.",
+            "description": "When you roll +Bond, you may roll +Appeal instead, if your move involves lies or other manipulation. On a miss, in addition to whatever move the MC elects to do, the person you are rolling against automatically resets their History with you. They've learned what a manipulative piece of work you can be.",
             "type": "roll",
             "stat": ["COMPANIONS.AbilityAppeal"],
             "fullHit": "Reduce both of your Fates to 6:00, and clear all stress tags on you both. Their history with you goes up by 1.",
             "partialHit": "Reduce both of your Fates to 6:00, and clear all stress tags on you both.",
-            "miss": "In addition to whatever move the MC elects to do, the person you are rolling against automatically resets their History with you. They’ve learned what a manipulative piece of work you can be.",
+            "miss": "In addition to whatever move the MC elects to do, the person you are rolling against automatically resets their History with you. They've learned what a manipulative piece of work you can be.",
             "options": "",
         },
         "becauseILoveYou": {
@@ -80,28 +80,23 @@ AgentData.moves = {
 
 AgentData.bonds = {
     1 : {
-        "1stText" : "%s knows something about me that I wish they didn’t.",
-        "3rdText" : "%s knows something about %o that they wish they didn’t.",
+        "historyText" : "%s knows something about me that I wish they didn't.",
         "bonus" : 1
     },
     2 : {
-        "1stText" : "",
-        "3rdText" : "",
-        "bonus" : 1
+        "historyText" : "I once left %s to die.",
+        "bonus" : 3
     },
     3 : {
-        "1stText" : "",
-        "3rdText" : "",
+        "historyText" : "Before I was a companion, I tried to recruit %s to the Agency.",
         "bonus" : 1
     },
     4 : {
-        "1stText" : "",
-        "3rdText" : "",
-        "bonus" : 1
+        "historyText" : "%s and I once fought our way out of impossible odds.",
+        "bonus" : 2
     },
     5 : {
-        "1stText" : "",
-        "3rdText" : "",
+        "historyText" : "Of all the people I've seduced, I only ever truly loved %s.",
         "bonus" : 1
     },
 };

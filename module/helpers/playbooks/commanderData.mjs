@@ -20,11 +20,11 @@ CommanderData.moves = {
             "fullHit": "",
             "partialHit": "",
             "miss": "",
-            "options": "<ul><li>0-esteem: take +1 forward. Not on your watch.</li><li>1-esteem: mark experience. You learn something from your awful mistake.</li><li>2-esteem: take one advance. You won’t let this tragedy happen again.</li><li>3-esteem: take one advance or change one emotional key. You are changed by the horror and stress.</li></ul>",
+            "options": "<ul><li>0-esteem: take +1 forward. Not on your watch.</li><li>1-esteem: mark experience. You learn something from your awful mistake.</li><li>2-esteem: take one advance. You won't let this tragedy happen again.</li><li>3-esteem: take one advance or change one emotional key. You are changed by the horror and stress.</li></ul>",
         },
         "secureThePerimeter": {
             "title": "Secure the Perimeter",
-            "description": "When you risk your Team by sending them to secure a dangerous or unknown area, roll +members sent, maximum +3. On a 10+, ask questions about the area as if you got a full hit on Read a Dire Situation. On a 7–9, you may ask the same questions, but reduce all their Fates by 1. On a miss, one or more of them dies (MC’s choice).",
+            "description": "When you risk your Team by sending them to secure a dangerous or unknown area, roll +members sent, maximum +3. On a 10+, ask questions about the area as if you got a full hit on Read a Dire Situation. On a 7–9, you may ask the same questions, but reduce all their Fates by 1. On a miss, one or more of them dies (MC's choice).",
             "type": "roll",
             "stat": [
                 {
@@ -91,8 +91,23 @@ CommanderData.moves = {
 
 CommanderData.bonds = {
     1 : {
-        "1stText" : "",
-        "3rdText" : "",
+        "historyText" : "I am considering offering %s membership on the Team.",
+        "bonus" : 1
+    },
+    2 : {
+        "historyText" : "I would go through hell or high water to assure the safety of %s.",
+        "bonus" : 3
+    },
+    3 : {
+        "historyText" : "%s saved my team when I couldn't.",
+        "bonus" : 2
+    },
+    4 : {
+        "historyText" : "If %s were under my command, I would have brought them up on charges.",
+        "bonus" : 1
+    },
+    5 : {
+        "historyText" : "I will never understand %s, and they will never understand me.",
         "bonus" : 1
     },
 };
