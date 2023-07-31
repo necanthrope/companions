@@ -120,7 +120,7 @@ export class CompanionsActorSheet extends ActorSheet {
     romanceMoves["WHIZMOVES"] = CONFIG.COMPANIONS.WHIZDATA.moves.romance;
     romanceMoves["WITNESSMOVES"] = CONFIG.COMPANIONS.WITNESSDATA.moves.romance;
 
-    // Build playbook moves object.
+    // Build romance moves object.
     context.system.moves.romance = {};
     const romanceMoveKey = context.system.playbook.toUpperCase() + "MOVES";
     if (Object.keys(romanceMoves).includes(romanceMoveKey)) {
@@ -133,15 +133,32 @@ export class CompanionsActorSheet extends ActorSheet {
 
     // Build data for Bonds & History section
     this.buildBonds(context);
+    this.buildHistory(context);
 
     console.log("done with setup");
   }
 
+  buildHistory(context) {
+    // build history data object
+    let history = {}
+    for (const bondId in context.system.bonds) {
+      if (context.system.bondNames.hasOwnProperty(bondId)) {
+        let bonded = Reflect.get(context.system.bondNames, bondId);
+        if (bonded === "Select") {
+          continue;
+        }
+        if (Object.keys(history).includes(bonded)) {
+          history[bonded] = Math.min(3, history[bonded] + context.system.bonds[bondId].bonus);
+        } else {
+          history[bonded] = Math.min(3, context.system.bonds[bondId].bonus);
+        }
+      }
+    }
+    context.system.history = structuredClone(history);
+  };
 
   buildBonds(context) {
-
-
-    // Build Bonds data array
+    // Build Bonds data object
     let bonds = {};
     bonds["AGENTBONDS"] = structuredClone(CONFIG.COMPANIONS.AGENTDATA.bonds);
     bonds["COMMANDERBONDS"] = CONFIG.COMPANIONS.COMMANDERDATA.bonds;
