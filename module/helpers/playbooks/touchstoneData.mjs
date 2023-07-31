@@ -25,7 +25,7 @@ TouchstoneData.moves = {
         },
         "naturalCharm": {
             "title": "Natural Charm",
-            "description": "Charm: +1 Appeal (Appeal +3).",
+            "description": "+1 Appeal (Appeal +3).",
             "type": "now",
             "stat": [],
             "fullHit": "",

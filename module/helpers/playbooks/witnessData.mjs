@@ -16,8 +16,8 @@ WitnessData.moves = {
     "romance": {
         "witnessRomance": {
             "title": "The Witness's Romance Move",
-            "description": "",
-            "type": "",
+            "description": "When you have a moment of closeness or intimacy with another Companion, take +1 History with them.",
+            "type": "now",
             "stat": [],
             "fullHit": "",
             "partialHit": "",
