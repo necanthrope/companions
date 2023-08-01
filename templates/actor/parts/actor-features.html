@@ -24,8 +24,8 @@
 -->
 
 <nav class="move-tabs" data-group="moves">
+    <a class="move-tabs" data-tab="playbook" data-group="moves">{{#if (eq system.playbook "")}}Playbook{{else}}{{capitalize system.playbook}}{{/if}} Moves</a>
     <a class="move-tabs" data-tab="basic" data-group="moves">Basic Moves</a>
-    <a class="move-tabs" data-tab="playbook" data-group="moves">Playbook Moves</a>
     <a class="move-tabs" data-tab="vortex" data-group="moves">Vortex Moves</a>
     <a class="move-tabs" data-tab="other" data-group="moves">Other Moves</a>
 </nav>
@@ -33,6 +33,7 @@
 <section class="move-tab">
 
     <div class="abilities flexcol tab" data-group="moves" data-tab="basic">
+        <h1>Basic Moves</h1>
         {{#each system.moves.basic}}
         <div class="ability flexrow flex-group-center">
             <label for="{{@key}}" class="resource-label flexlarge align-left">{{this.title}}</label>
@@ -59,6 +60,7 @@
         {{log this}}
     </div>
     <div class="abilities flexcol tab" data-group="moves" data-tab="playbook">
+        <h1>{{#if (eq system.playbook "")}}Playbook{{else}}{{capitalize system.playbook}}{{/if}} Moves</h1>
         {{#each system.moves.playbook}}
         <div class="ability flexrow flex-group-center">
             <label for="{{@key}}" class="resource-label flexlarge align-left">{{this.title}}</label>

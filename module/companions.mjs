@@ -1,21 +1,21 @@
 // Import document classes.
-import { CompanionsActor } from "./documents/actor.mjs";
-import { CompanionsItem } from "./documents/item.mjs";
+import {CompanionsActor} from "./documents/actor.mjs";
+import {CompanionsItem} from "./documents/item.mjs";
 // Import sheet classes.
-import { CompanionsActorSheet } from "./sheets/actor-sheet.mjs";
-import { CompanionsItemSheet } from "./sheets/item-sheet.mjs";
+import {CompanionsActorSheet} from "./sheets/actor-sheet.mjs";
+import {CompanionsItemSheet} from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
-import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
-import { COMPANIONS } from "./helpers/config.mjs";
-import { BasicData } from "./helpers/basicData.mjs";
+import {preloadHandlebarsTemplates} from "./helpers/templates.mjs";
+import {COMPANIONS} from "./helpers/config.mjs";
+import {BasicData} from "./helpers/basicData.mjs";
 // Import playbook moves
-import { AgentData } from "./helpers/playbooks/agentData.mjs";
-import { CommanderData } from "./helpers/playbooks/commanderData.mjs";
-import { ConstructData } from "./helpers/playbooks/constructData.mjs";
-import { TouchstoneData } from "./helpers/playbooks/touchstoneData.mjs";
-import { WarriorPoetData } from "./helpers/playbooks/warriorPoetData.mjs";
-import { WhizData } from "./helpers/playbooks/whizData.mjs";
-import { WitnessData } from "./helpers/playbooks/witnessData.mjs";
+import {AgentData} from "./helpers/playbooks/agentData.mjs";
+import {CommanderData} from "./helpers/playbooks/commanderData.mjs";
+import {ConstructData} from "./helpers/playbooks/constructData.mjs";
+import {TouchstoneData} from "./helpers/playbooks/touchstoneData.mjs";
+import {WarriorPoetData} from "./helpers/playbooks/warriorPoetData.mjs";
+import {WhizData} from "./helpers/playbooks/whizData.mjs";
+import {WitnessData} from "./helpers/playbooks/witnessData.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -92,6 +92,10 @@ Handlebars.registerHelper('concat', function() {
 
 Handlebars.registerHelper('toLowerCase', function(str) {
   return str.toLowerCase();
+});
+
+Handlebars.registerHelper('capitalize', function(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 });
 
 /* -------------------------------------------- */

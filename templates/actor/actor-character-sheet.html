@@ -6,6 +6,7 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="create">Create</a>
     <a class="item" data-tab="features">Features</a>
     <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="items">Items</a>
@@ -29,7 +30,7 @@
           <div class="resource flex-group-center">
             <label for="system.health.value" class="resource-label">Fate</label>
             <div class="resource-content flexrow flex-center flex-between">
-              <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
+              <input  type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
               <span> / </span>
               <input type="text" name="system.health.max" value="{{system.health.max}}" data-dtype="Number"/>
             </div>
@@ -44,33 +45,21 @@
             </div>
           </div>
 
-          <!--
-          <div class="resource flex-group-center">
-            <label for="system.attributes.level.value" class="resource-label">Level</label>
-            <div class="resource-content flexrow flex-center flex-between">
-              <input type="text" name="system.attributes.level.value" value="{{system.attributes.level.value}}" data-dtype="Number"/>
-            </div>
-          </div>
-          -->
-
         </div>
       </div>
     </header>
+
+    {{!-- Playbook Creation Tab --}}
+    <div class="tab create" data-group="primary" data-tab="create">
+      {{> "systems/companions/templates/actor/parts/actor-create.html"}}
+    </div>
 
     {{!-- Owned Features Tab --}}
     <div class="tab features" data-group="primary" data-tab="features">
       <section class="grid grid-3col">
         <aside class="sidebar">
           <div class="header-fields">
-            <h2 class="charname">
-              <label for="system.playbook" class="resource-label">Playbook</label>
-              <select id="playbook-selector" name="system.playbook" {{#if (ne "" system.playbook)}}disabled{{/if}}>
-                <option value="" disabled selected hidden>Select your Playbook</option>
-                {{#each system.playbooks}}
-                <option value = "{{@key}}" {{#if (eq @key ../system.playbook)}} selected {{/if}}>{{this.title}}</option>
-                {{/each}}
-              </select><button onclick="document.getElementById('playbook-selector').removeAttribute('disabled')">unlock</button>
-            </h2>
+
             <h2 class="charname">
               <label for="actor.name" class="resource-label">Name</label>
               <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
@@ -94,16 +83,15 @@
             {{/each}}
           </div>
 
-          <!-- bonds & history -->
-          <div>
-            <h2>Bonds</h2>
-            <ul>
-            {{#each system.bonds}}
-              <li>
-               {{{this.historyText}}}
-              </li>
+          <div class="header-fields">
+            <h2 class="charname">
+              <label for="actor.name" class="resource-label">Bonds</label>
+            </h2>
+            {{#each system.history as |bond key|}}
+            <div class="flexrow flex-group-center">
+              <label class="resource-label flexlarge align-left">{{key}}</label><span class="flexlarge align-right">{{lookup ../system.history key}}</span>
+            </div>
             {{/each}}
-            </ul>
           </div>
 
         </aside>

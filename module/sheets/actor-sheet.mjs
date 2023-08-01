@@ -14,8 +14,8 @@ export class CompanionsActorSheet extends ActorSheet {
       width: 1200,
       height: 600,
       tabs: [
-          { navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" },
-          {navSelector: ".move-tabs", contentSelector: ".move-tab", initial: "basic"}
+          { navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "create" },
+          {navSelector: ".move-tabs", contentSelector: ".move-tab", initial: "playbook"}
       ]
     });
   }

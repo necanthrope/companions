@@ -1,0 +1,24 @@
+<!-- bonds & history -->
+<h1>Creating your {{#if (eq system.playbook "")}}Companion{{else}}{{capitalize system.playbook}}{{/if}}</h1>
+<div>
+    <h2 class="charname">Playbook</h2>
+    <select id="playbook-selector" name="system.playbook" {{#if (ne "" system.playbook)}}disabled{{/if}}>
+    <option value="" disabled selected hidden>Select your Playbook</option>
+    {{#each system.playbooks}}
+    <option value="{{@key}}" {{#if (eq @key ../system.playbook)}} selected {{/if}}>{{this.title}}</option>
+    {{/each}}
+    </select>
+    <button onclick="document.getElementById('playbook-selector').removeAttribute('disabled')">unlock</button>
+</div>
+<div>
+    <h2>Bonds</h2>
+    {{#if (ne system.playbook "")}}
+    <ul>
+        {{#each system.bonds}}
+        <li>
+            {{{this.historyText}}} ({{{this.bonus}}})
+        </li>
+        {{/each}}
+    </ul>
+    {{/if}}
+</div>

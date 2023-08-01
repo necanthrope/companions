@@ -44,7 +44,7 @@ ConstructData.moves = {
         },
         "todayYouGetToLive": {
             "title": "Today You Get to Live",
-            "description": "Today You Get to Live: When someone you value dies, you may slightly bend time to position yourself to switch places with them. When you do this, mark an experience circle, die, and make The Death Move.",
+            "description": "When someone you value dies, you may slightly bend time to position yourself to switch places with them. When you do this, mark an experience circle, die, and make The Death Move.",
             "type": "now",
             "stat": [],
             "fullHit": "",
