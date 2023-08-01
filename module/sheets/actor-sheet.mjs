@@ -163,6 +163,12 @@ export class CompanionsActorSheet extends ActorSheet {
         }
       }
     }
+    for (const i in game.actors.tree.entries) {
+      let actor = game.actors.tree.entries[i];
+      if (!Object.keys(history).includes(actor.name) && actor.id !== this.object._id) {
+        history[actor.name] = 0;
+      }
+    }
     context.system.history = structuredClone(history);
   };
 
@@ -202,7 +208,6 @@ export class CompanionsActorSheet extends ActorSheet {
       defaultSelection = "selected";
     }
     charNameWidget = charNameWidget + "<option disabled " + defaultSelection + " hidden>" + defaultName + "</option>\n";
-    context.system.characters = [];
     for (const i in game.actors.tree.entries) {
       let actor = game.actors.tree.entries[i];
       if (actor.id !== this.object._id) {
@@ -212,7 +217,6 @@ export class CompanionsActorSheet extends ActorSheet {
             selected = " selected";
           }
         }
-        context.system.characters.push(actor.name);
         charNameWidget = charNameWidget + "<option" + selected + ">" + actor.name + "</option>\n";
       }
     }
