@@ -70,9 +70,13 @@ export class CompanionsActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareCharacterData(context) {
+    // Build data for Bonds & History section
+    this.buildBonds(context);
+    this.buildHistory(context);
+
     // Handle ability scores.
-    var statObj = {};
-    var statLabelObj = {};
+    let statObj = {};
+    let statLabelObj = {};
     for (let [k, v] of Object.entries(context.system.abilities)) {
       v.label = game.i18n.localize(CONFIG.COMPANIONS.abilities[k]) ?? k;
       v.sheetLabel = game.i18n.localize(CONFIG.COMPANIONS.abilityLabels[k]) ?? k;
@@ -80,11 +84,20 @@ export class CompanionsActorSheet extends ActorSheet {
       statLabelObj[v.label] = v.sheetLabel;
     }
 
+    let histObj = {};
+    let histLabelObj = {};
+    for (let [key, value] of Object.entries(context.system.history)) {
+      let historyTag = "HISTORY:" + key;
+      let historyLabel = "History with " + key;
+      histObj[historyTag] = value;
+      histLabelObj[historyLabel] = value;
+    }
+
     // Build basic moves object.
     context.system.moves.basic = {};
     for (const key in CONFIG.COMPANIONS.BASICDATA.moves.basic) {
       let move = CONFIG.COMPANIONS.BASICDATA.moves.basic[key];
-      this.buildMove(statObj, statLabelObj, move);
+      this.buildMove(statObj, statLabelObj, histObj, histLabelObj, move);
       context.system.moves.basic[key] = move;
     }
 
@@ -106,7 +119,7 @@ export class CompanionsActorSheet extends ActorSheet {
     if (Object.keys(playbookMoves).includes(playbookMoveKey)) {
       for (const key in playbookMoves[playbookMoveKey]) {
         let move = playbookMoves[playbookMoveKey][key];
-        this.buildMove(statObj, statLabelObj, move);
+        this.buildMove(statObj, statLabelObj, histObj, histLabelObj, move);
         context.system.moves.playbook[key] = move;
       }
     }
@@ -126,14 +139,10 @@ export class CompanionsActorSheet extends ActorSheet {
     if (Object.keys(romanceMoves).includes(romanceMoveKey)) {
       for (const key in romanceMoves[romanceMoveKey]) {
         let move = romanceMoves[romanceMoveKey][key];
-        this.buildMove(statObj, statLabelObj, move);
+        this.buildMove(statObj, statLabelObj, histObj, histLabelObj, move);
         context.system.moves.romance[key] = move;
       }
     }
-
-    // Build data for Bonds & History section
-    this.buildBonds(context);
-    this.buildHistory(context);
 
     console.log("done with setup");
   }
@@ -210,18 +219,33 @@ export class CompanionsActorSheet extends ActorSheet {
     return charNameWidget + "</select>\n\n";
   }
 
-  buildMove(statObj, statLabelObj, move) {
+  buildMove(statObj, statLabelObj, histObj, histLabelObj, move) {
     move.rolls = [];
     for (const movestat of move.stat) {
       let operator = "+";
-      var roll = {};
+      let roll = {};
       if (typeof movestat === "string") {
-        if (statObj[movestat] < 0) {
-          operator = "-";
+        if (movestat === "history") {
+          for (let [key, value] of Object.entries(histLabelObj)) {
+            roll = {};
+            if (value < 0) {
+              operator = "-";
+            }
+            roll.stat = movestat;
+            roll.bonus = Math.abs(value);
+            roll.statLabel = key;
+            roll.operator = operator
+            move.rolls.push(roll);
+          }
+          continue;
+        } else {
+          if (statObj[movestat] < 0) {
+            operator = "-";
+          }
+          roll.stat = movestat;
+          roll.bonus = Math.abs(statObj[movestat]);
+          roll.statLabel = statLabelObj[movestat];
         }
-        roll.stat = movestat;
-        roll.bonus = Math.abs(statObj[movestat]);
-        roll.statLabel = statLabelObj[movestat];
       } else if (typeof movestat === "object") {
         if (movestat['value'] < 0) {
           operator = "-";

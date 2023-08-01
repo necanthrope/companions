@@ -95,8 +95,8 @@ BasicData.moves = {
         "bondWithAPerson": {
             "title": "Bond with a Person",
             "description": "When you have down time and connect with someone, open up and tell them something you hold dear: a worry, a fear, a secret, a belief-something important.<br/>Then, roll +Bond with them. On a hit, reduce both of your Fates to 6:00, and clear all stress tags on you both. On a 10+, their history with you goes up by 1. On a miss, they take an appropriate stress tag. You cannot bond with each other until it clears.<br/>If the person you're bonding with is your romantic interest, take +1 now.",
-            "type": "now",
-            "stat": [],
+            "type": "roll",
+            "stat": ["history"],
             "fullHit": "Reduce both of your Fates to 6:00, and clear all stress tags on you both. Their history with you goes up by 1.",
             "partialHit": "Reduce both of your Fates to 6:00, and clear all stress tags on you both.",
             "miss": "They take an appropriate stress tag. You cannot bond with each other until it clears.",

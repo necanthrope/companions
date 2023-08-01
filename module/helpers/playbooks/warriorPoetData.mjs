@@ -46,7 +46,7 @@ WarriorPoetData.moves = {
             "title": "The Song of my People",
             "description": "When someone asks you for advice, tell them a story from your culture that applies to the situation, then roll +Bond with them. On a hit, they get a +1 ongoing while the story's moral/advice applies. On a 10+, mark experience.",
             "type": "roll",
-            "stat": ["COMPANIONS.Ability"],
+            "stat": ["history"],
             "fullHit": "The person who heard your story gets +1 ongoing while the story's moral/advice applies. Also, mark experience.",
             "partialHit": "The person who heard your story gets +1 ongoing while the story's moral/advice applies.",
             "miss": "",
