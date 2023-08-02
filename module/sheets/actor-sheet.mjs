@@ -71,8 +71,8 @@ export class CompanionsActorSheet extends ActorSheet {
      */
     _prepareCharacterData(context) {
         // Build data for Bonds & History section
-        this.buildBonds(context);
-        this.buildHistory(context);
+        this._buildBonds(context);
+        this._buildHistory(context);
 
         // Handle ability scores.
         let statObj = {};
@@ -80,6 +80,13 @@ export class CompanionsActorSheet extends ActorSheet {
         for (let [k, v] of Object.entries(context.system.abilities)) {
             v.label = game.i18n.localize(CONFIG.COMPANIONS.abilities[k]) ?? k;
             v.sheetLabel = game.i18n.localize(CONFIG.COMPANIONS.abilityLabels[k]) ?? k;
+            statObj[v.label] = v.value;
+            statLabelObj[v.label] = v.sheetLabel;
+        }
+
+        for (let [k, v] of Object.entries(context.system.stats)) {
+            v.label = game.i18n.localize(CONFIG.COMPANIONS.stats[k]) ?? k;
+            v.sheetLabel = game.i18n.localize(CONFIG.COMPANIONS.statLabels[k]) ?? k;
             statObj[v.label] = v.value;
             statLabelObj[v.label] = v.sheetLabel;
         }
@@ -208,7 +215,7 @@ export class CompanionsActorSheet extends ActorSheet {
         }
     }
 
-    buildHistory(context) {
+    _buildHistory(context) {
         // build history data object
         let history = {}
         for (const bondId in context.system.bonds) {
@@ -233,7 +240,7 @@ export class CompanionsActorSheet extends ActorSheet {
         context.system.history = structuredClone(history);
     };
 
-    buildBonds(context) {
+    _buildBonds(context) {
         // Build Bonds data object
         let bonds = {};
         bonds["AGENTBONDS"] = structuredClone(CONFIG.COMPANIONS.AGENTDATA.bonds);
@@ -249,14 +256,14 @@ export class CompanionsActorSheet extends ActorSheet {
         const playbookBondKey = context.system.playbook.toUpperCase() + "BONDS";
         if (Object.keys(bonds).includes(playbookBondKey)) {
             for (const bondId in bonds[playbookBondKey]) {
-                let charNameWidget = this.buildBondNameList(context, bondId);
+                let charNameWidget = this._buildBondNameList(context, bondId);
                 context.system.bonds[bondId] = structuredClone(bonds[playbookBondKey][bondId]);
                 context.system.bonds[bondId]['historyText'] = context.system.bonds[bondId]['historyText'].replace(/%s/, charNameWidget);
             }
         }
     }
 
-    buildBondNameList(context, bondId) {
+    _buildBondNameList(context, bondId) {
         // Build a list of other characters for Bonds.
         if (!context.system.hasOwnProperty("bondNames")) {
             context.system.bondNames = {}

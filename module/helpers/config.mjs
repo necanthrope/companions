@@ -12,20 +12,20 @@ export const COMPANIONS = {};
   "vortex": "COMPANIONS.AbilityVortex"
 };
 
-COMPANIONS.abilityAbbreviations = {
-  "cool": "COMPANIONS.AbilityCoolAbbr",
-  "bold": "COMPANIONS.AbilityBoldAbbr",
-  "appeal": "COMPANIONS.AbilityAppealAbbr",
-  "clever": "COMPANIONS.AbilityCleverAbbr",
-  "vortex": "COMPANIONS.AbilityVortexAbbr"
-};
-
 COMPANIONS.abilityLabels = {
   "cool": "Cool",
   "bold": "Bold",
   "appeal": "Appeal",
   "clever": "Clever",
   "vortex": "Vortex"
+};
+
+COMPANIONS.stats = {
+    "scrap": "COMPANIONS.StatScrap",
+};
+
+COMPANIONS.statLabels = {
+    "scrap": "Scrap",
 };
 
 COMPANIONS.playbooks = {
