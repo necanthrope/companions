@@ -64,13 +64,13 @@ BasicData.moves = {
         },
         "convinceAPerson": {
             "title": "Convince a Person",
-            "description": "When you have have leverage and attempt to convince someone ...",
+            "description": "When you have have leverage and attempt to convince someone ... <ul><li>...with reason, roll +Clever.</li><li>...with an appeal to the emotions, roll +Appeal.</li><li>...with intimidation, roll +Bold.</li></ul>For NPCs, on a 10+, they do what you want. On a 7-9, they do what you want, but with some strings attached.<br/>With PCs, on a 10+, take both of the following. On a 7-9, choose one of the following:<ul><li>If they do it, mark experience.</li><li>If they don't do it, they're Acting under Pressure.</li></ul>",
             "type": "roll",
             "stat": ["COMPANIONS.AbilityClever", "COMPANIONS.AbilityAppeal", "COMPANIONS.AbilityBold"],
             "fullHit": "NPCs do what you want. For PCs, take both of the following:<ul><li>If they do it, mark experience.</li><li>If they don't do it, they're Acting under Pressure.</li></ul>",
             "partialHit": "NPCs do what you want, but with some strings attached. For PCs, choose one of the following:<ul><li>If they do it, mark experience.</li><li>If they don't do it, they're Acting under Pressure.</li></ul>",
             "miss": "",
-            "options": "<ul><li>...with reason, roll +Clever.</li><li>...with an appeal to the emotions, roll +Appeal.</li><li>...with intimidation, roll +Bold.</li></ul>For NPCs, on a 10+, they do what you want. On a 7-9, they do what you want, but with some strings attached.<br/>With PCs, on a 10+, take both of the following. On a 7-9, choose one of the following:<ul><li>If they do it, mark experience.</li><li>If they don't do it, they're Acting under Pressure.</li></ul>",
+            "options": "",
         },
         "useUnfamiliarTechnology": {
             "title": "Use Unfamiliar Technology",
