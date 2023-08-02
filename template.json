@@ -3,16 +3,6 @@
     "types": ["character", "npc"],
     "templates": {
       "base": {
-        "fate": {
-          "value": 6,
-          "min": 0,
-          "max": 6
-        },
-        "spark": {
-          "value": 6,
-          "min": 0,
-          "max": 6
-        },
         "biography": "" ,
         "look": ""
       }
@@ -43,6 +33,16 @@
           "value": 0,
           "min": 0,
           "max": 3
+        },
+        "fate": {
+          "value": 6,
+          "min": 0,
+          "max": 6
+        },
+        "spark": {
+          "value": 6,
+          "min": 0,
+          "max": 6
         }
       },
       "playbook" : "",

@@ -1,0 +1,50 @@
+<div class="abilities flexcol tab" data-group="moves" data-tab="playbook">
+    <h1>{{#if (eq system.playbook "")}}Playbook{{else}}{{capitalize system.playbook}}{{/if}} Moves</h1>
+    {{#each system.moves.playbook}}
+    <div class="ability flexrow flex-group-center">
+        <label for="{{@key}}" class="resource-label flexlarge align-left">{{this.title}}</label>
+    </div>
+    <div>
+        {{{this.description}}}
+        {{#if (ne this.options "")}}
+        {{{this.options}}}
+        {{/if}}
+    </div>
+    {{#if (gt this.stat.length 0)}}
+    <div>
+        To make this move,
+        {{#each this.rolls as |roll key|}}
+        <span class="ability-mod rollable"
+              data-roll="2d6{{roll.operator}}{{roll.bonus}}"
+              data-label="{{../this.title}}"
+              data-statLabel="{{roll.statLabel}}"
+              data-movekey="{{@../key}}"
+        >Roll +{{roll.statLabel}}</span>{{#unless @last}} OR {{/unless}}{{/each}}.
+    </div>
+    {{/if}}
+    {{/each}}
+
+    {{#each system.moves.romance}}
+    <div class="ability flexrow flex-group-center">
+        <h3 for="{{@key}}" class="resource-label flexlarge align-left">{{this.title}}</h3>
+    </div>
+    <div>
+        {{{this.description}}}
+        {{#if (ne this.options "")}}
+        {{{this.options}}}
+        {{/if}}
+    </div>
+    {{#if (gt this.stat.length 0)}}
+    <div>
+        To make this move,
+        {{#each this.rolls as |roll key|}}
+        <span class="ability-mod rollable"
+              data-roll="2d6{{roll.operator}}{{roll.bonus}}"
+              data-label="{{../this.title}}"
+              data-statLabel="{{roll.statLabel}}"
+              data-movekey="{{@../key}}"
+        >Roll +{{roll.statLabel}}</span>{{#unless @last}} OR {{/unless}}{{/each}}.
+    </div>
+    {{/if}}
+    {{/each}}
+</div>

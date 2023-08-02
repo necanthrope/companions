@@ -120,6 +120,13 @@ export class CompanionsActorSheet extends ActorSheet {
             this._buildMove(statObj, statLabelObj, histObj, histLabelObj, move);
             context.system.moves.basic[key] = move;
         }
+
+        context.system.moves.vortex = {};
+        for (const key in CONFIG.COMPANIONS.BASICDATA.moves.vortex) {
+            let move = CONFIG.COMPANIONS.BASICDATA.moves.vortex[key];
+            this._buildMove(statObj, statLabelObj, histObj, histLabelObj, move);
+            context.system.moves.vortex[key] = move;
+        }
     }
 
     _buildPlaybookMoves(context, statObj, statLabelObj, histObj, histLabelObj) {

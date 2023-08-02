@@ -21,10 +21,14 @@ COMPANIONS.abilityLabels = {
 };
 
 COMPANIONS.stats = {
+    "fate": "COMPANIONS.StatFate",
+    "spark": "COMPANIONS.StatSpark",
     "scrap": "COMPANIONS.StatScrap",
 };
 
 COMPANIONS.statLabels = {
+    "fate": "Fate",
+    "spark": "Spark",
     "scrap": "Scrap",
 };
 
