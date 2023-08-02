@@ -55,7 +55,7 @@ TouchstoneData.moves = {
         },
         "cleverClever": {
             "title": "Clever Clever",
-            "description": "Like the Doctor, you abhor weapons. If you wish to Control a Dire Situation without resorting to their use, roll +Clever instead of +Bold. On a 10+, hold 3. On a 7–9, hold 1. Then spend your hold 1 for 1 to briefly describe mistakes made by your enemy or environmental factors that you exploit to stop them. These are new facts you are introducing to the scene. Your attack is +stun. On a 12+, you may choose for your attack to be deadly; your opponent Tempts Fate.",
+            "description": "Like the Doctor, you abhor weapons. When you Control a Dire Situation without resorting to their use, roll +Clever instead of +Bold. On a 10+, hold 3. On a 7–9, hold 1. Then spend your hold 1 for 1 to briefly describe mistakes made by your enemy or environmental factors that you exploit to stop them. These are new facts you are introducing to the scene. Your attack is +stun. On a 12+, you may choose for your attack to be deadly; your opponent Tempts Fate.",
             "type": "roll",
             "stat": ["COMPANIONS.AbilityClever"],
             "fullHit": "Choose 3:",
