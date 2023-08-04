@@ -35,24 +35,31 @@ COMPANIONS.statLabels = {
 COMPANIONS.playbooks = {
     "agent" : {
         "title" : "The Agent",
+        "name" : "Agent",
     },
     "commander" : {
         "title" : "The Commander",
+        "name" : "Commander",
     },
     "construct" : {
         "title" : "The Construct",
+        "name" : "Construct",
     },
     "touchstone" : {
         "title" : "The Touchstone",
+        "name" : "Touchstone",
     },
     "warriorPoet" :{
         "title" : "The Warrior-Poet",
+        "name" : "Warrior-Poet",
     },
     "whiz" : {
         "title" : "The Whiz",
+        "name" : "Whiz",
     },
     "witness" : {
         "title" : "The Witness",
+        "name" : "Witness",
     },
 };
 

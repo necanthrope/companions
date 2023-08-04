@@ -143,14 +143,25 @@ export class CompanionsActorSheet extends ActorSheet {
 
         // Build playbook moves object.
         context.system.moves.playbook = {};
+        context.system.moves.other = {};
         const playbookMoveKey = context.system.playbook.toUpperCase() + "MOVES";
-        if (Object.keys(playbookMoves).includes(playbookMoveKey)) {
-            for (const key in playbookMoves[playbookMoveKey]) {
-                let move = playbookMoves[playbookMoveKey][key];
+        for (const playbookKey in Object.keys(playbookMoves)) {
+            let currentPlaybookMoveKey = Object.keys(playbookMoves)[playbookKey];
+            let otherPlaybookMoveKey = currentPlaybookMoveKey.toLowerCase().replace(/moves$/, "");
+            if (otherPlaybookMoveKey !== context.system.playbook) {
+                context.system.moves.other[otherPlaybookMoveKey] = {}
+            }
+            for (const moveKey in playbookMoves[currentPlaybookMoveKey]) {
+                let move = playbookMoves[currentPlaybookMoveKey][moveKey];
                 this._buildMove(statObj, statLabelObj, histObj, histLabelObj, move);
-                context.system.moves.playbook[key] = move;
+                if (currentPlaybookMoveKey === playbookMoveKey) {
+                    context.system.moves.playbook[moveKey] = move;
+                } else {
+                    context.system.moves.other[otherPlaybookMoveKey][moveKey] = move;
+                }
             }
         }
+
     }
 
     _buildRomanceMoves(context, statObj, statLabelObj, histObj, histLabelObj) {

@@ -98,6 +98,18 @@ Handlebars.registerHelper('capitalize', function(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 });
 
+Handlebars.registerHelper('replace', function( str, find, replace) {
+  return str.replace( find, replace );
+});
+
+Handlebars.registerHelper('takenMove', function(name, context) {
+  let ret = "";
+  if(Object.keys(context).includes(name) && context[name]) {
+    ret = "checked"
+  }
+  return ret;
+});
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */

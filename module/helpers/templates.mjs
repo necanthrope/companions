@@ -14,5 +14,6 @@ export const preloadHandlebarsTemplates = async function () {
         "systems/companions/templates/actor/parts/actor-moves-playbook.html",
         "systems/companions/templates/actor/parts/actor-moves-basic.html",
         "systems/companions/templates/actor/parts/actor-moves-vortex.html",
+        "systems/companions/templates/actor/parts/actor-moves-other.html",
     ]);
 };

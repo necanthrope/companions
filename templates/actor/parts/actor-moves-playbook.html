@@ -2,6 +2,7 @@
     <h1>{{#if (eq system.playbook "")}}Playbook{{else}}{{capitalize system.playbook}}{{/if}} Moves</h1>
     {{#each system.moves.playbook}}
     <div class="ability flexrow flex-group-center">
+        <input type="checkbox" name="system.moves.taken.{{@key}}" {{takenMove @key ../system.moves.taken}}>
         <label for="{{@key}}" class="resource-label flexlarge align-left">{{this.title}}</label>
     </div>
     <div>
