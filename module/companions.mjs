@@ -110,6 +110,13 @@ Handlebars.registerHelper('takenMove', function(name, context) {
   return ret;
 });
 
+Handlebars.registerHelper('takenMoveBool', function(name, context) {
+  if(Object.keys(context).includes(name) && context[name]) {
+    return true;
+  }
+  return false;
+});
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */

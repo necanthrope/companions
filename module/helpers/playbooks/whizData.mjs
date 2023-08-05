@@ -4,7 +4,7 @@ WhizData.moves = {
     "playbook": {
         "aggressiveImprovisation": {
             "title": "Aggressive Improvisation",
-            "description": "<p>When you improvise a device using scrap, describe its purpose and effect, then roll +scrap you choose to spend (max +3). On a 10+, hold 3. On 7-9, hold 2.</p>",
+            "description": "<p>When you improvise a device using scrap, describe its purpose and effect, then roll +Scrap you choose to spend (max +3). On a 10+, hold 3. On 7-9, hold 2.</p>",
             "type": "roll",
             "stat": ["COMPANIONS.StatScrap"],
             "fullHit": "Hold 3.",
@@ -24,7 +24,7 @@ WhizData.moves = {
         },
         "reverseThePolarity": {
             "title": "Reverse the Polarity",
-            "description": "When you Convince with Emotions or Intimidation, and you’re talking about your areas of expertise, roll +Clever instead of +Appeal or +Bold. On a hit, describe how you talk circles around them.",
+            "description": "When you Convince with Emotions or Intimidation, and you’re talking about your areas of expertise, you may roll +Clever instead of +Appeal or +Bold. On a hit, describe how you talk circles around them.",
             "type": "roll",
             "stat": ["COMPANIONS.AbilityClever"],
             "fullHit": "NPCs do what you want. For PCs, take both of the following:<ul><li>If they do it, mark experience.</li><li>If they don't do it, they're Acting under Pressure.</li></ul>",

@@ -2,6 +2,7 @@
     <h1>Vortex Moves</h1>
     {{#each system.moves.vortex}}
     <div class="ability flexrow flex-group-center">
+        <input type="checkbox" name="system.moves.taken.{{@key}}" {{takenMove @key ../system.moves.taken}}>
         <label for="{{@key}}" class="resource-label flexlarge align-left">{{this.title}}</label>
     </div>
     <div>
@@ -11,6 +12,7 @@
         {{/if}}
     </div>
     {{#if (gt this.stat.length 0)}}
+    {{#if (takenMoveBool @key ../system.moves.taken)}}
     <div>
         To make this move,
         {{#each this.rolls as |roll key|}}
@@ -22,6 +24,6 @@
         >Roll +{{roll.statLabel}}</span>{{#unless @last}} OR {{/unless}}{{/each}}.
     </div>
     {{/if}}
+    {{/if}}
     {{/each}}
-    {{log this}}
 </div>

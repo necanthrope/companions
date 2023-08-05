@@ -121,11 +121,17 @@ export class CompanionsActorSheet extends ActorSheet {
             context.system.moves.basic[key] = move;
         }
 
+        context.system.moves.takenCategories = {};
+        context.system.moves.takenCategories.vortex = false;
+
         context.system.moves.vortex = {};
         for (const key in CONFIG.COMPANIONS.BASICDATA.moves.vortex) {
             let move = CONFIG.COMPANIONS.BASICDATA.moves.vortex[key];
             this._buildMove(statObj, statLabelObj, histObj, histLabelObj, move);
             context.system.moves.vortex[key] = move;
+            if (Object.keys(context.system.moves.taken).includes(key) && context.system.moves.taken[key]) {
+                context.system.moves.takenCategories.vortex = true;
+            }
         }
     }
 
@@ -144,23 +150,31 @@ export class CompanionsActorSheet extends ActorSheet {
         // Build playbook moves object.
         context.system.moves.playbook = {};
         context.system.moves.other = {};
+        context.system.moves.takenCategories.other = {};
         const playbookMoveKey = context.system.playbook.toUpperCase() + "MOVES";
         for (const playbookKey in Object.keys(playbookMoves)) {
             let currentPlaybookMoveKey = Object.keys(playbookMoves)[playbookKey];
-            let otherPlaybookMoveKey = currentPlaybookMoveKey.toLowerCase().replace(/moves$/, "");
-            if (otherPlaybookMoveKey !== context.system.playbook) {
-                context.system.moves.other[otherPlaybookMoveKey] = {}
+            let otherPlaybookName = currentPlaybookMoveKey.toLowerCase().replace(/moves$/, "");
+            if (otherPlaybookName !== context.system.playbook) {
+                context.system.moves.other[otherPlaybookName] = {}
             }
+            context.system.moves.takenCategories.other[otherPlaybookName] = false;
             for (const moveKey in playbookMoves[currentPlaybookMoveKey]) {
                 let move = playbookMoves[currentPlaybookMoveKey][moveKey];
                 this._buildMove(statObj, statLabelObj, histObj, histLabelObj, move);
                 if (currentPlaybookMoveKey === playbookMoveKey) {
                     context.system.moves.playbook[moveKey] = move;
                 } else {
-                    context.system.moves.other[otherPlaybookMoveKey][moveKey] = move;
+                    context.system.moves.other[otherPlaybookName][moveKey] = move;
+                    if (Object.keys(context.system.moves.taken).includes(moveKey) && context.system.moves.taken[moveKey]) {
+                        context.system.moves.takenCategories.other[otherPlaybookName] = true;
+                    }
                 }
             }
         }
+
+        //
+
 
     }
 

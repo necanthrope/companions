@@ -4,7 +4,7 @@ AgentData.moves = {
     "playbook": {
         "notMyFirstTimeAtTheDance": {
             "title": "Not My First Time at the Dance",
-            "description": "You're from the future, and have direct experience with technologies from all over spacetime. When Using Unfamiliar Technology, roll +Cool instead of +Vortex. Additionally, if you hit on that move, you gain insight into who made the device, and what other applications it may have.",
+            "description": "You're from the future, and have direct experience with technologies from all over spacetime. When Using Unfamiliar Technology, you may roll +Cool instead of +Vortex. Additionally, if you hit on that move, you gain insight into who made the device, and what other applications it may have.",
             "type": "roll",
             "stat": ["COMPANIONS.AbilityCool"],
             "fullHit": "It works without problems.",
@@ -14,7 +14,7 @@ AgentData.moves = {
         },
         "youDontStandAChance": {
             "title": "You Don't Stand a Chance",
-            "description": "When you Convince with Reason or Emotions, roll +Cool instead of +Appeal. Additionally, you may seduce just about any living being that values reproduction.",
+            "description": "When you Convince with Reason or Emotions, you may roll +Cool instead of +Appeal. Additionally, you may seduce just about any living being that values reproduction.",
             "type": "roll",
             "stat": ["COMPANIONS.AbilityCool"],
             "fullHit": "NPCs do what you want. For PCs, take both of the following:<ul><li>If they do it, mark experience.</li><li>If they don't do it, they're Acting under Pressure.</li></ul>",
@@ -66,7 +66,7 @@ AgentData.moves = {
     "romance": {
         "agentRomance": {
             "title": "The Agent's Romance Move",
-            "description": "When you kiss someone with whom you are Romantically Entangled, take 2 hold. Spend 1 for 1 to instinctively know where they are. Take +1 ongoing to any move you make trying to save their life while you have hold.",
+            "description": "When you have an intimate moment someone with whom you are Romantically Entangled, take 2 hold. Spend 1 for 1 to instinctively know where they are. Take +1 ongoing to any move you make trying to save their life while you have hold.",
             "type": "now",
             "stat": [],
             "fullHit": "",

@@ -4,7 +4,7 @@ WarriorPoetData.moves = {
     "playbook": {
         "keenEyes": {
             "title": "Keen Eyes",
-            "description": "Your experiences in battle and hunting have finely honed your senses. When you Read a Dire Situation, use Bold instead of Clever.",
+            "description": "Your experiences in battle and hunting have finely honed your senses. When you Read a Dire Situation, you may roll +Bold instead of +Clever.",
             "type": "roll",
             "stat": ["COMPANIONS.AbilityBold"],
             "fullHit": "Ask 3:",
@@ -14,7 +14,7 @@ WarriorPoetData.moves = {
         },
         "theFavourOfTheGods": {
             "title": "The Favour of the Gods",
-            "description": "When you risk your life to save others, take +1 forward when Tempting Fate. Additionally, if you die, gain +1 forward during The Death Move.",
+            "description": "When you risk your life to save others, take +1 forward when Tempting Fate. Additionally, if you die, take +1 forward during The Death Move.",
             "type": "now",
             "stat": [],
             "fullHit": "",

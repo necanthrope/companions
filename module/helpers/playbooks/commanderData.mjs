@@ -14,7 +14,7 @@ CommanderData.moves = {
         },
         "rememberTheFallen": {
             "title": "Remember the Fallen",
-            "description": "You feel personally responsible for your Team, beyond mere duty. When you order one or more of your Team members to their deaths, take the following based on the Team member you held in the highest esteem:",
+            "description": "You feel personally responsible for your Team, beyond mere duty. When you order one or more of your Team members to their deaths, take the following based on the one you held in the highest esteem:",
             "type": "now",
             "stat": [],
             "fullHit": "",

@@ -47,8 +47,9 @@
       },
       "playbook" : "",
       "lockPlaybook" : false,
-      "moves" : {},
-      "takenMoves" : []
+      "moves" : {
+        "taken": {}
+      }
     },
     "npc": {
       "templates": ["base"],
