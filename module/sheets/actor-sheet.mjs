@@ -101,6 +101,10 @@ export class CompanionsActorSheet extends ActorSheet {
             histLabelObj[historyLabel] = value;
         }
 
+        // Build stat blocks object.
+        const playbookDataKey = context.system.playbook.toUpperCase() + "DATA";
+        context.system.statBlocks = CONFIG.COMPANIONS[playbookDataKey].statBlocks;
+
         // Build basic moves object.
         this._buildBasicMoves(context, statObj, statLabelObj, histObj, histLabelObj);
 
@@ -152,6 +156,7 @@ export class CompanionsActorSheet extends ActorSheet {
         context.system.moves.other = {};
         context.system.moves.takenCategories.other = {};
         const playbookMoveKey = context.system.playbook.toUpperCase() + "MOVES";
+        let otherMoves = false;
         for (const playbookKey in Object.keys(playbookMoves)) {
             let currentPlaybookMoveKey = Object.keys(playbookMoves)[playbookKey];
             let otherPlaybookName = currentPlaybookMoveKey.toLowerCase().replace(/moves$/, "");
@@ -168,14 +173,12 @@ export class CompanionsActorSheet extends ActorSheet {
                     context.system.moves.other[otherPlaybookName][moveKey] = move;
                     if (Object.keys(context.system.moves.taken).includes(moveKey) && context.system.moves.taken[moveKey]) {
                         context.system.moves.takenCategories.other[otherPlaybookName] = true;
+                        otherMoves = true;
                     }
                 }
             }
         }
-
-        //
-
-
+        context.system.moves.takenCategories.otherMovesTaken = otherMoves;
     }
 
     _buildRomanceMoves(context, statObj, statLabelObj, histObj, histLabelObj) {

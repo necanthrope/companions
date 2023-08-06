@@ -1,5 +1,13 @@
 export const AgentData = {};
 
+AgentData.statBlocks = {
+    "0": {"cool": "+2", "bold": "+0", "appeal": "+1", "clever": "−1", "vortex": "+1"},
+    "1": {"cool": "+2", "bold": "+1", "appeal": "+0", "clever": "+1", "vortex": "−1"},
+    "2": {"cool": "+2", "bold": "−1", "appeal": "+2", "clever": "−1", "vortex": "+0"},
+    "3": {"cool": "+2", "bold": "+1", "appeal": "+1", "clever": "+0", "vortex": "−1"},
+};
+
+
 AgentData.moves = {
     "playbook": {
         "notMyFirstTimeAtTheDance": {

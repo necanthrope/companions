@@ -2,6 +2,7 @@
 <h1>Creating your {{#if (eq system.playbook "")}}Companion{{else}}{{capitalize system.playbook}}{{/if}}</h1>
 <div>
     <h2 class="charname">Playbook</h2>
+    Select your playbook.
     <select id="playbook-selector" name="system.playbook" {{#if (ne "" system.playbook)}}disabled{{/if}}>
     <option value="" disabled selected hidden>Select your Playbook</option>
     {{#each system.playbooks}}
@@ -10,9 +11,22 @@
     </select>
     <button onclick="document.getElementById('playbook-selector').removeAttribute('disabled')">unlock</button>
 </div>
+
+{{#if (ne system.playbook "")}}
+<div>
+    <h2>Stats</h2>
+    Choose one set.
+    {{#each system.statBlocks}}
+    <p>({{#each this}}{{@key}}: {{this}}{{#unless @last}}, {{/unless}}{{/each}})</p>
+    {{/each}}
+</div>
+{{/if}}
+
+{{#if (ne system.playbook "")}}
 <div>
     <h2>Bonds</h2>
-    {{#if (ne system.playbook "")}}
+    These are events that happened with other Companions in previous episodes. Fill in the name of which Companion they happened with. Tell them what happened.<br/>
+    The total of the numbers in parentheses (max +3) for each Companion is your Bond with them. Record each name and total in the Bonds & History box.
     <ul>
         {{#each system.bonds}}
         <li>
@@ -20,5 +34,5 @@
         </li>
         {{/each}}
     </ul>
-    {{/if}}
 </div>
+{{/if}}

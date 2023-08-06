@@ -11,6 +11,7 @@
         {{{this.options}}}
         {{/if}}
     </div>
+    {{#if (takenMoveBool @key ../system.moves.taken)}}
     {{#if (gt this.stat.length 0)}}
     <div>
         To make this move,
@@ -22,6 +23,7 @@
               data-movekey="{{@../key}}"
         >Roll +{{roll.statLabel}}</span>{{#unless @last}} OR {{/unless}}{{/each}}.
     </div>
+    {{/if}}
     {{/if}}
     {{/each}}
 
@@ -49,7 +51,9 @@
     {{/if}}
     {{/each}}
 
+    {{#if system.moves.takenCategories.vortex}}
     <h1>Vortex Moves</h1>
+    {{/if}}
     {{#each system.moves.vortex}}
     {{#if (takenMoveBool @key ../system.moves.taken)}}
     <div class="ability flexrow flex-group-center">
@@ -75,4 +79,44 @@
         {{/if}}
     {{/if}}
     {{/each}}
+
+    {{#if system.moves.takenCategories.otherMovesTaken}}
+    <h1>Other Moves</h1>
+    {{#each system.moves.other}}
+
+    {{log "bloop"}}
+    {{log @key}}
+    {{log (lookup ../system.moves.takenCategories.other @key)}}
+
+    {{#if (lookup ../system.moves.takenCategories.other @key)}}
+    <h2>{{capitalize @key}} Moves</h2>
+    {{/if}}
+    {{#each this}}
+    {{#if (takenMoveBool @key ../../system.moves.taken)}}
+    <div class="ability flexrow flex-group-center">
+        <label for="{{@key}}" class="resource-label flexlarge align-left">{{this.title}}</label>
+    </div>
+    <div>
+        {{{this.description}}}
+        {{#if (ne this.options "")}}
+        {{{this.options}}}
+        {{/if}}
+    </div>
+    {{#if (gt this.stat.length 0)}}
+    <div>
+        To make this move,
+        {{#each this.rolls as |roll key|}}
+        <span class="ability-mod rollable"
+              data-roll="2d6{{roll.operator}}{{roll.bonus}}"
+              data-label="{{../this.title}}"
+              data-statLabel="{{roll.statLabel}}"
+              data-movekey="{{@../key}}"
+        >Roll +{{roll.statLabel}}</span>{{#unless @last}} OR {{/unless}}{{/each}}.
+    </div>
+    {{/if}}
+    {{/if}}
+    {{/each}}
+    {{/each}}
+    {{/if}}
+
 </div>
