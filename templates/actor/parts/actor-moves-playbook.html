@@ -83,11 +83,6 @@
     {{#if system.moves.takenCategories.otherMovesTaken}}
     <h1>Other Moves</h1>
     {{#each system.moves.other}}
-
-    {{log "bloop"}}
-    {{log @key}}
-    {{log (lookup ../system.moves.takenCategories.other @key)}}
-
     {{#if (lookup ../system.moves.takenCategories.other @key)}}
     <h2>{{capitalize @key}} Moves</h2>
     {{/if}}

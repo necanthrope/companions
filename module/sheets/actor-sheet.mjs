@@ -70,6 +70,11 @@ export class CompanionsActorSheet extends ActorSheet {
      * @return {undefined}
      */
     _prepareCharacterData(context) {
+        const playbookDataKey = context.system.playbook.toUpperCase() + "DATA";
+
+        // Build data for stats section
+        this._buildStats(playbookDataKey, context);
+
         // Build data for Bonds & History section
         this._buildBonds(context);
         this._buildHistory(context);
@@ -102,7 +107,6 @@ export class CompanionsActorSheet extends ActorSheet {
         }
 
         // Build stat blocks object.
-        const playbookDataKey = context.system.playbook.toUpperCase() + "DATA";
         context.system.statBlocks = CONFIG.COMPANIONS[playbookDataKey].statBlocks;
 
         // Build basic moves object.
@@ -115,6 +119,18 @@ export class CompanionsActorSheet extends ActorSheet {
         this._buildRomanceMoves(context, statObj, statLabelObj, histObj, histLabelObj);
 
         console.log("done with setup");
+    }
+
+    _buildStats(playookDataKey, context) {
+        if (context.system.hasOwnProperty("statBlockSelected")) {
+            let statBlock = CONFIG.COMPANIONS[playookDataKey].statBlocks[context.system.statBlockSelected];
+            context.system.abilities.cool.value = parseInt(statBlock.cool);
+            context.system.abilities.bold.value = parseInt(statBlock.bold);
+            context.system.abilities.appeal.value = parseInt(statBlock.appeal);
+            context.system.abilities.clever.value = parseInt(statBlock.clever);
+            context.system.abilities.vortex.value = parseInt(statBlock.vortex);
+            console.log("calculated stats");
+        }
     }
 
     _buildBasicMoves(context, statObj, statLabelObj, histObj, histLabelObj) {

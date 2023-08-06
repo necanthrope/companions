@@ -1,5 +1,19 @@
 export const CommanderData = {};
 
+CommanderData.statBlocks = {
+    "0": {"cool": "+2", "bold": "+1", "appeal": "-1", "clever": "+0", "vortex": "+0"}, //+commando
+    "1": {"cool": "+1", "bold": "+1", "appeal": "+2", "clever": "-1", "vortex": "+1"}, //+intelligence
+    "2": {"cool": "+1", "bold": "+2", "appeal": "+0", "clever": "+1", "vortex": "-1"}, //+infantry
+    "3": {"cool": "-1", "bold": "+1", "appeal": "+0", "clever": "+2", "vortex": "+1"}, //+technical
+}
+
+CommanderData.statTags = {
+    "0": ["+commando"],
+    "1": ["+intelligence"],
+    "2": ["+infantry"],
+    "3": ["+technical"],
+}
+
 CommanderData.moves = {
     "playbook": {
         "intoTheBreach": {

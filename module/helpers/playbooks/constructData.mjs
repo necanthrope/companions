@@ -1,5 +1,19 @@
 export const ConstructData = {};
 
+ConstructData.statBlocks = {
+    "0": {"cool": "+1", "bold": "-1", "appeal": "+0", "clever": "+2", "vortex": "+1"},
+    "1": {"cool": "+0", "bold": "-1", "appeal": "-1", "clever": "+2", "vortex": "+2"},
+    "2": {"cool": "-1", "bold": "+2", "appeal": "-1", "clever": "+2", "vortex": "+1"},
+    "3": {"cool": "-1", "bold": "+1", "appeal": "-1", "clever": "+2", "vortex": "+1"},
+}
+
+ConstructData.statTags = {
+    "0": ["+androgyne", "+vortex"],
+    "1": ["+aware", "+vortex"],
+    "2": ["+eternal", "+vortex"],
+    "3": ["+flexible", "+vortex"],
+}
+
 ConstructData.moves = {
     "playbook": {
         "eideticPolymath": {

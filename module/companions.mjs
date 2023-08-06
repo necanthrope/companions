@@ -117,6 +117,13 @@ Handlebars.registerHelper('takenMoveBool', function(name, context) {
   return false;
 });
 
+Handlebars.registerHelper('radioSelected', function(value, id) {
+  if(value===id) {
+    return "checked";
+  }
+  return ""
+});
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */

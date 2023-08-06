@@ -17,7 +17,13 @@
     <h2>Stats</h2>
     Choose one set.
     {{#each system.statBlocks}}
-    <p>({{#each this}}{{@key}}: {{this}}{{#unless @last}}, {{/unless}}{{/each}})</p>
+    <p>
+        <input type="radio"
+               id="statBlockS:w
+               elected{{@key}}"
+               name="system.statBlockSelected"
+               value={{@key}}
+               {{radioSelected ../system.statBlockSelected @key}}/>({{#each this}}{{@key}}: {{this}}{{#unless @last}}, {{/unless}}{{/each}})</p>
     {{/each}}
 </div>
 {{/if}}

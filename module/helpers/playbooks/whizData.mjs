@@ -1,5 +1,12 @@
 export const WhizData = {};
 
+WhizData.statBlocks = {
+    "0": {"cool": "+1", "bold": "+0", "appeal": "-1", "clever": "+2", "vortex": "+1"},
+    "1": {"cool": "+2", "bold": "-1", "appeal": "-1", "clever": "+2", "vortex": "+1"},
+    "2": {"cool": "-1", "bold": "+0", "appeal": "+1", "clever": "+2", "vortex": "+1"},
+    "3": {"cool": "-1", "bold": "-1", "appeal": "+0", "clever": "+2", "vortex": "+2"},
+}
+
 WhizData.moves = {
     "playbook": {
         "aggressiveImprovisation": {
