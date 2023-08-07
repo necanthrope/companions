@@ -1,5 +1,5 @@
 <!-- bonds & history -->
-<h1>Creating your {{#if (eq system.playbook "")}}Companion{{else}}{{capitalize system.playbook}}{{/if}}</h1>
+<h1>Creating your {{#if (eq system.playbook "")}}Companion{{else}}{{playbookProperName system.playbooks system.playbook}}{{/if}}</h1>
 <div>
     <h2 class="charname">Playbook</h2>
     Select your playbook.
@@ -23,7 +23,8 @@
                elected{{@key}}"
                name="system.statBlockSelected"
                value={{@key}}
-               {{radioSelected ../system.statBlockSelected @key}}/>({{#each this}}{{@key}}: {{this}}{{#unless @last}}, {{/unless}}{{/each}})</p>
+               {{radioSelected ../system.statBlockSelected @key}}/>
+        ({{#each this}}{{@key}}: {{this}}{{#unless @last}}, {{/unless}}{{/each}})</p>
     {{/each}}
 </div>
 {{/if}}
@@ -32,7 +33,7 @@
 <div>
     <h2>Bonds</h2>
     These are events that happened with other Companions in previous episodes. Fill in the name of which Companion they happened with. Tell them what happened.<br/>
-    The total of the numbers in parentheses (max +3) for each Companion is your Bond with them. Record each name and total in the Bonds & History box.
+    The total of the numbers in parentheses (max +3) for each Companion is your Bond with them. Each name and total will be recorded for you in the Bonds box.
     <ul>
         {{#each system.bonds}}
         <li>

@@ -124,6 +124,10 @@ Handlebars.registerHelper('radioSelected', function(value, id) {
   return ""
 });
 
+Handlebars.registerHelper('playbookProperName', function(tree, key) {
+  return tree[key].name;
+});
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */
