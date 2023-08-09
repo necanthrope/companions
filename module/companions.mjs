@@ -128,6 +128,10 @@ Handlebars.registerHelper('playbookProperName', function(tree, key) {
   return tree[key].name;
 });
 
+Handlebars.registerHelper('abilityProperName', function(abilities, key) {
+  return abilities[key].sheetLabel;
+});
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */

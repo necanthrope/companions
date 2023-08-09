@@ -24,7 +24,7 @@
                name="system.statBlockSelected"
                value={{@key}}
                {{radioSelected ../system.statBlockSelected @key}}/>
-        ({{#each this}}{{@key}}: {{this}}{{#unless @last}}, {{/unless}}{{/each}})</p>
+        ({{#each this}}{{abilityProperName ../../system.abilities @key}}: {{this}}{{#unless @last}}, {{/unless}}{{/each}})</p>
     {{/each}}
 </div>
 {{/if}}
