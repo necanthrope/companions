@@ -10,6 +10,21 @@
     "character": {
       "templates": ["base"],
       "attributes": {
+        "scrap": {
+          "value": 0,
+          "min": 0,
+          "max": 3
+        },
+        "fate": {
+          "value": 6,
+          "min": 0,
+          "max": 6
+        },
+        "spark": {
+          "value": 6,
+          "min": 0,
+          "max": 6
+        }
       },
       "abilities": {
         "cool": {
@@ -26,23 +41,6 @@
         },
         "vortex": {
           "value": 0
-        }
-      },
-      "stats" : {
-        "scrap": {
-          "value": 0,
-          "min": 0,
-          "max": 3
-        },
-        "fate": {
-          "value": 6,
-          "min": 0,
-          "max": 6
-        },
-        "spark": {
-          "value": 6,
-          "min": 0,
-          "max": 6
         }
       },
       "playbook" : "",

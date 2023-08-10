@@ -1,6 +1,6 @@
 export const WarriorPoetData = {};
 
-WarriorPoetData.statBlocks = {
+WarriorPoetData.abilityBlocks = {
     "0": {"cool": "+1", "bold": "+2", "appeal": "+1", "clever": "+0", "vortex": "-1"},
     "1": {"cool": "+0", "bold": "+2", "appeal": "+1", "clever": "+1", "vortex": "-1"},
     "2": {"cool": "-1", "bold": "+2", "appeal": "+1", "clever": "+1", "vortex": "+0"},

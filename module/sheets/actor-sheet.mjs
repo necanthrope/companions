@@ -72,8 +72,8 @@ export class CompanionsActorSheet extends ActorSheet {
     _prepareCharacterData(context) {
         const playbookDataKey = context.system.playbook.toUpperCase() + "DATA";
 
-        // Build data for stats section
-        this._buildStats(playbookDataKey, context);
+        // Build data for abilities section
+        this._buildAbilities(playbookDataKey, context);
 
         // Build data for Bonds & History section
         this._buildBonds(context);
@@ -81,19 +81,19 @@ export class CompanionsActorSheet extends ActorSheet {
 
         // Handle ability scores.
         let statObj = {};
-        let statLabelObj = {};
+        let attributeLabelObj = {};
         for (let [k, v] of Object.entries(context.system.abilities)) {
             v.label = game.i18n.localize(CONFIG.COMPANIONS.abilities[k]) ?? k;
             v.sheetLabel = game.i18n.localize(CONFIG.COMPANIONS.abilityLabels[k]) ?? k;
             statObj[v.label] = v.value;
-            statLabelObj[v.label] = v.sheetLabel;
+            attributeLabelObj[v.label] = v.sheetLabel;
         }
 
-        for (let [k, v] of Object.entries(context.system.stats)) {
-            v.label = game.i18n.localize(CONFIG.COMPANIONS.stats[k]) ?? k;
-            v.sheetLabel = game.i18n.localize(CONFIG.COMPANIONS.statLabels[k]) ?? k;
+        for (let [k, v] of Object.entries(context.system.attributes)) {
+            v.label = game.i18n.localize(CONFIG.COMPANIONS.attributes[k]) ?? k;
+            v.sheetLabel = game.i18n.localize(CONFIG.COMPANIONS.attributeLabels[k]) ?? k;
             statObj[v.label] = v.value;
-            statLabelObj[v.label] = v.sheetLabel;
+            attributeLabelObj[v.label] = v.sheetLabel;
         }
 
         // Handle bond scores.
@@ -107,37 +107,39 @@ export class CompanionsActorSheet extends ActorSheet {
         }
 
         // Build stat blocks object.
-        context.system.statBlocks = CONFIG.COMPANIONS[playbookDataKey].statBlocks;
+        if (context.system.hasOwnProperty("playbook") && context.system.playbook !== "") {
+            context.system.abilityBlocks = CONFIG.COMPANIONS[playbookDataKey].abilityBlocks;
+        }
 
         // Build basic moves object.
-        this._buildBasicMoves(context, statObj, statLabelObj, histObj, histLabelObj);
+        this._buildBasicMoves(context, statObj, attributeLabelObj, histObj, histLabelObj);
 
         // Build playbook moves object.
-        this._buildPlaybookMoves(context, statObj, statLabelObj, histObj, histLabelObj);
+        this._buildPlaybookMoves(context, statObj, attributeLabelObj, histObj, histLabelObj);
 
         // Build romance moves object.
-        this._buildRomanceMoves(context, statObj, statLabelObj, histObj, histLabelObj);
+        this._buildRomanceMoves(context, statObj, attributeLabelObj, histObj, histLabelObj);
 
         console.log("done with setup");
     }
 
-    _buildStats(playookDataKey, context) {
-        if (context.system.hasOwnProperty("statBlockSelected")) {
-            let statBlock = CONFIG.COMPANIONS[playookDataKey].statBlocks[context.system.statBlockSelected];
+    _buildAbilities(playookDataKey, context) {
+        if (context.system.hasOwnProperty("abilityBlockSelected")) {
+            let statBlock = CONFIG.COMPANIONS[playookDataKey].abilityBlocks[context.system.abilityBlockSelected];
             context.system.abilities.cool.value = parseInt(statBlock.cool);
             context.system.abilities.bold.value = parseInt(statBlock.bold);
             context.system.abilities.appeal.value = parseInt(statBlock.appeal);
             context.system.abilities.clever.value = parseInt(statBlock.clever);
             context.system.abilities.vortex.value = parseInt(statBlock.vortex);
-            console.log("calculated stats");
+            console.log("calculated abilities");
         }
     }
 
-    _buildBasicMoves(context, statObj, statLabelObj, histObj, histLabelObj) {
+    _buildBasicMoves(context, statObj, attributeLabelObj, histObj, histLabelObj) {
         context.system.moves.basic = {};
         for (const key in CONFIG.COMPANIONS.BASICDATA.moves.basic) {
             let move = CONFIG.COMPANIONS.BASICDATA.moves.basic[key];
-            this._buildMove(statObj, statLabelObj, histObj, histLabelObj, move);
+            this._buildMove(statObj, attributeLabelObj, histObj, histLabelObj, move);
             context.system.moves.basic[key] = move;
         }
 
@@ -147,7 +149,7 @@ export class CompanionsActorSheet extends ActorSheet {
         context.system.moves.vortex = {};
         for (const key in CONFIG.COMPANIONS.BASICDATA.moves.vortex) {
             let move = CONFIG.COMPANIONS.BASICDATA.moves.vortex[key];
-            this._buildMove(statObj, statLabelObj, histObj, histLabelObj, move);
+            this._buildMove(statObj, attributeLabelObj, histObj, histLabelObj, move);
             context.system.moves.vortex[key] = move;
             if (Object.keys(context.system.moves.taken).includes(key) && context.system.moves.taken[key]) {
                 context.system.moves.takenCategories.vortex = true;
@@ -155,7 +157,7 @@ export class CompanionsActorSheet extends ActorSheet {
         }
     }
 
-    _buildPlaybookMoves(context, statObj, statLabelObj, histObj, histLabelObj) {
+    _buildPlaybookMoves(context, statObj, attributeLabelObj, histObj, histLabelObj) {
         context.system.playbooks = CONFIG.COMPANIONS.playbooks;
 
         let playbookMoves = {};
@@ -182,7 +184,7 @@ export class CompanionsActorSheet extends ActorSheet {
             context.system.moves.takenCategories.other[otherPlaybookName] = false;
             for (const moveKey in playbookMoves[currentPlaybookMoveKey]) {
                 let move = playbookMoves[currentPlaybookMoveKey][moveKey];
-                this._buildMove(statObj, statLabelObj, histObj, histLabelObj, move);
+                this._buildMove(statObj, attributeLabelObj, histObj, histLabelObj, move);
                 if (currentPlaybookMoveKey === playbookMoveKey) {
                     context.system.moves.playbook[moveKey] = move;
                 } else {
@@ -197,7 +199,7 @@ export class CompanionsActorSheet extends ActorSheet {
         context.system.moves.takenCategories.otherMovesTaken = otherMoves;
     }
 
-    _buildRomanceMoves(context, statObj, statLabelObj, histObj, histLabelObj) {
+    _buildRomanceMoves(context, statObj, attributeLabelObj, histObj, histLabelObj) {
         let romanceMoves = {};
         romanceMoves["AGENTMOVES"] = CONFIG.COMPANIONS.AGENTDATA.moves.romance;
         romanceMoves["COMMANDERMOVES"] = CONFIG.COMPANIONS.COMMANDERDATA.moves.romance;
@@ -213,13 +215,13 @@ export class CompanionsActorSheet extends ActorSheet {
         if (Object.keys(romanceMoves).includes(romanceMoveKey)) {
             for (const key in romanceMoves[romanceMoveKey]) {
                 let move = romanceMoves[romanceMoveKey][key];
-                this._buildMove(statObj, statLabelObj, histObj, histLabelObj, move);
+                this._buildMove(statObj, attributeLabelObj, histObj, histLabelObj, move);
                 context.system.moves.romance[key] = move;
             }
         }
     }
 
-    _buildMove(statObj, statLabelObj, histObj, histLabelObj, move) {
+    _buildMove(statObj, attributeLabelObj, histObj, histLabelObj, move) {
         move.rolls = [];
         for (const movestat of move.stat) {
             let operator = "+";
@@ -233,7 +235,7 @@ export class CompanionsActorSheet extends ActorSheet {
                         }
                         roll.stat = movestat;
                         roll.bonus = Math.abs(value);
-                        roll.statLabel = key;
+                        roll.attributeLabel = key;
                         roll.operator = operator
                         move.rolls.push(roll);
                     }
@@ -244,7 +246,7 @@ export class CompanionsActorSheet extends ActorSheet {
                     }
                     roll.stat = movestat;
                     roll.bonus = Math.abs(statObj[movestat]);
-                    roll.statLabel = statLabelObj[movestat];
+                    roll.attributeLabel = attributeLabelObj[movestat];
                 }
             } else if (typeof movestat === "object") {
                 if (movestat['value'] < 0) {
@@ -252,14 +254,14 @@ export class CompanionsActorSheet extends ActorSheet {
                 }
                 roll.stat = "special";
                 roll.bonus = Math.abs(movestat['value']);
-                roll.statLabel = movestat['label'];
+                roll.attributeLabel = movestat['label'];
             } else {
                 if (movestat < 0) {
                     operator = "-";
                 }
                 roll.stat = "special";
                 roll.bonus = Math.abs(movestat);
-                roll.statLabel = movestat;
+                roll.attributeLabel = movestat;
             }
             roll.operator = operator;
             move.rolls.push(roll);

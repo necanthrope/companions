@@ -16,14 +16,14 @@
 <div>
     <h2>Stats</h2>
     Choose one set.
-    {{#each system.statBlocks}}
+    {{#each system.abilityBlocks}}
     <p>
         <input type="radio"
                id="statBlockS:w
                elected{{@key}}"
-               name="system.statBlockSelected"
+               name="system.abilityBlockSelected"
                value={{@key}}
-               {{radioSelected ../system.statBlockSelected @key}}/>
+               {{radioSelected ../system.abilityBlockSelected @key}}/>
         ({{#each this}}{{abilityProperName ../../system.abilities @key}}: {{this}}{{#unless @last}}, {{/unless}}{{/each}})</p>
     {{/each}}
 </div>

@@ -1,6 +1,6 @@
 export const TouchstoneData = {};
 
-TouchstoneData.statBlocks = {
+TouchstoneData.abilityBlocks = {
     "0": {"cool": "+0", "bold": "-1", "appeal": "+2", "clever": "+1", "vortex": "+1"},
     "1": {"cool": "-1", "bold": "-1", "appeal": "+2", "clever": "+2", "vortex": "+0"},
     "2": {"cool": "+1", "bold": "+1", "appeal": "+2", "clever": "+0", "vortex": "-1"},

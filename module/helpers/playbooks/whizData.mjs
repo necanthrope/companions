@@ -1,6 +1,6 @@
 export const WhizData = {};
 
-WhizData.statBlocks = {
+WhizData.abilityBlocks = {
     "0": {"cool": "+1", "bold": "+0", "appeal": "-1", "clever": "+2", "vortex": "+1"},
     "1": {"cool": "+2", "bold": "-1", "appeal": "-1", "clever": "+2", "vortex": "+1"},
     "2": {"cool": "-1", "bold": "+0", "appeal": "+1", "clever": "+2", "vortex": "+1"},
@@ -13,7 +13,7 @@ WhizData.moves = {
             "title": "Aggressive Improvisation",
             "description": "<p>When you improvise a device using scrap, describe its purpose and effect, then roll +Scrap you choose to spend (max +3). On a 10+, hold 3. On 7-9, hold 2.</p>",
             "type": "roll",
-            "stat": ["COMPANIONS.StatScrap"],
+            "stat": ["COMPANIONS.AttributeScrap"],
             "fullHit": "Hold 3.",
             "partialHit": "Hold 1.",
             "miss": "",

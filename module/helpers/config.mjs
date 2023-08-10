@@ -20,13 +20,13 @@ COMPANIONS.abilityLabels = {
   "vortex": "Vortex"
 };
 
-COMPANIONS.stats = {
-    "fate": "COMPANIONS.StatFate",
-    "spark": "COMPANIONS.StatSpark",
-    "scrap": "COMPANIONS.StatScrap",
+COMPANIONS.attributes = {
+    "fate": "COMPANIONS.AttributeFate",
+    "spark": "COMPANIONS.AttributeSpark",
+    "scrap": "COMPANIONS.AttributeScrap",
 };
 
-COMPANIONS.statLabels = {
+COMPANIONS.attributeLabels = {
     "fate": "Fate",
     "spark": "Spark",
     "scrap": "Scrap",

@@ -154,11 +154,11 @@ function decorateDieRoll(html, chatMessage, messageData) {
   if (chatMessage.flavor.includes("|")) {
     const flavorSplit = chatMessage.flavor.split("|");
     const moveKey = flavorSplit[0];
-    const statLabel = flavorSplit[1];
+    const attributeLabel = flavorSplit[1];
     if (Object.keys(CONFIG.COMPANIONS.ALLMOVES).includes(moveKey)) {
       const move = CONFIG.COMPANIONS.ALLMOVES[moveKey];
       if (move.type === "roll") {
-        const newFlavor= move.title + " (" + "+" + statLabel + ")";
+        const newFlavor= move.title + " (" + "+" + attributeLabel + ")";
         html.innerHTML = html.innerHTML.replace(chatMessage.flavor,newFlavor);
         chatMessage.flavor = newFlavor;
         const resultText = getMoveResultText(move, chatMessage.rolls[0]._total);

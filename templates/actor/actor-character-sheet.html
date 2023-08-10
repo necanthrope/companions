@@ -72,8 +72,7 @@
                     <div class="ability flexrow flex-group-center">
                         <!-- <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="2d6+@abilities.{{key}}.value" data-label="{{ability.sheetLabel}}">{{ability.sheetLabel}}</label> -->
                         <label for="system.abilities.{{key}}.value" class="resource-label flexlarge align-left">{{ability.sheetLabel}}</label>
-                        <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}"
-                               data-dtype="Number"/>
+                        <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
                     </div>
                     {{/each}}
                 </div>
@@ -83,9 +82,9 @@
                         <label for="actor.name" class="resource-label">Bonds</label>
                     </h2>
                     {{#each system.history as |bond key|}}
-                    <div class="flexrow flex-group-center">
-                        <label class="resource-label flexlarge align-left">{{key}}</label><span
-                            class="flexlarge align-right">{{lookup ../system.history key}}</span>
+                    <div class="bond flexrow flex-group-center">
+                        <label class="resource-label flexlarge align-left">{{key}}</label>
+                        <input type="text" name="bond-{{key}}" value="{{lookup ../system.history key}}" data-dtype="Number"/>
                     </div>
                     {{/each}}
                 </div>
