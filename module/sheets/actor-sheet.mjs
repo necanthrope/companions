@@ -467,8 +467,7 @@ export class CompanionsActorSheet extends ActorSheet {
 
         // Handle rolls that supply the formula directly.
         if (dataset.roll) {
-            //let label = dataset.label ? `${dataset.label} (+${dataset.statlabel})|${dataset.movekey}`  : '[unknown]';
-            let label = dataset.movekey ? `${dataset.movekey}|${dataset.statlabel}` : '[unknown]';
+            let label = dataset.movekey ? `${dataset.movekey}|${dataset.attributelabel}` : '[unknown]';
             let roll = new Roll(dataset.roll, this.actor.getRollData());
             roll.toMessage({
                 speaker: ChatMessage.getSpeaker({actor: this.actor}),
