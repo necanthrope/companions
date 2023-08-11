@@ -24,12 +24,14 @@ COMPANIONS.attributes = {
     "fate": "COMPANIONS.AttributeFate",
     "spark": "COMPANIONS.AttributeSpark",
     "scrap": "COMPANIONS.AttributeScrap",
+    "experience": "COMPANIONS.AttributeExperience",
 };
 
 COMPANIONS.attributeLabels = {
     "fate": "Fate",
     "spark": "Spark",
     "scrap": "Scrap",
+    "experience": "Experience",
 };
 
 COMPANIONS.playbooks = {
