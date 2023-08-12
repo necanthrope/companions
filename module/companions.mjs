@@ -135,7 +135,9 @@ Handlebars.registerHelper('abilityProperName', function(abilities, key) {
 Handlebars.registerHelper('experienceButtons', function(currentXp, maxXp) {
   let ret = "";
   for (let i=1; i<=maxXp; i++) {
-    if (i <= currentXp) {
+    if (i === parseInt(currentXp)) {
+      ret = ret + "<input type='radio' name='system.attributes.experience.value' value=" + i + " checked>";
+    } else if (i < parseInt(currentXp)) {
       ret = ret + "<input type='radio' name='system.attributes.experience.value' value=" + i + " checked>";
     } else {
       ret = ret + "<input type='radio' name='system.attributes.experience.value' value=" + i + ">";

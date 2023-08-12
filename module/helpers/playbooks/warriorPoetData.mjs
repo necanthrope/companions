@@ -85,24 +85,27 @@ WarriorPoetData.moves = {
 };
 
 WarriorPoetData.bonds = {
-    1 : {
-        "historyText" : "%s is my Elder. They have taught me much already.",
-        "bonus" : 2
+    1: {
+        "historyText": "%s is my Elder. They have taught me much already.",
+        "bonus": 2
     },
-    2 : {
-        "historyText" : "I hold %s in contempt for their past actions.",
-        "bonus" : 1
+    2: {
+        "historyText": "I hold %s in contempt for their past actions.",
+        "bonus": 1
     },
-    3 : {
-        "historyText" : "%s has shown me that violence isn't always the answer.",
-        "bonus" : 1
+    3: {
+        "historyText": "%s has shown me that violence isn't always the answer.",
+        "bonus": 1
     },
-    4 : {
-        "historyText" : "%s friendship is worth more to me than the Way of the Warrior.",
-        "bonus" : 3
+    4: {
+        "historyText": "%s friendship is worth more to me than the Way of the Warrior.",
+        "bonus": 3
     },
-    5 : {
-        "historyText" : "I have sworn a blood oath to protect %s.",
-        "bonus" : 2
+    5: {
+        "historyText": "I have sworn a blood oath to protect %s.",
+        "bonus": 2
     },
 };
+
+WarriorPoetData.advances = {};
+WarriorPoetData.takenAdvances = {};

@@ -42,16 +42,16 @@ CommanderData.moves = {
             "type": "roll",
             "stat": [
                 {
-                    "value":1,
-                    "label":"1 Team member"
+                    "value": 1,
+                    "label": "1 Team member"
                 },
                 {
-                    "value":2,
-                    "label":"2 Team members"
+                    "value": 2,
+                    "label": "2 Team members"
                 },
                 {
-                    "value":3,
-                    "label":"3 Team members"
+                    "value": 3,
+                    "label": "3 Team members"
                 }],
             "fullHit": "Ask questions about the area as if you got a full hit on Read a Dire Situation.",
             "partialHit": "Ask questions about the area as if you got a full hit on Read a Dire Situation, but reduce all sent Team members Fate by 1.",
@@ -104,24 +104,27 @@ CommanderData.moves = {
 };
 
 CommanderData.bonds = {
-    1 : {
-        "historyText" : "I am considering offering %s membership on the Team.",
-        "bonus" : 1
+    1: {
+        "historyText": "I am considering offering %s membership on the Team.",
+        "bonus": 1
     },
-    2 : {
-        "historyText" : "I would go through hell or high water to assure the safety of %s.",
-        "bonus" : 3
+    2: {
+        "historyText": "I would go through hell or high water to assure the safety of %s.",
+        "bonus": 3
     },
-    3 : {
-        "historyText" : "%s saved my team when I couldn't.",
-        "bonus" : 2
+    3: {
+        "historyText": "%s saved my team when I couldn't.",
+        "bonus": 2
     },
-    4 : {
-        "historyText" : "If %s were under my command, I would have brought them up on charges.",
-        "bonus" : 1
+    4: {
+        "historyText": "If %s were under my command, I would have brought them up on charges.",
+        "bonus": 1
     },
-    5 : {
-        "historyText" : "I will never understand %s, and they will never understand me.",
-        "bonus" : 1
+    5: {
+        "historyText": "I will never understand %s, and they will never understand me.",
+        "bonus": 1
     },
 };
+
+CommanderData.advances = {};
+CommanderData.takenAdvances = {};

@@ -52,47 +52,64 @@
 
         <section class="grid grid-3col">
             <aside class="sidebar">
+                <div class="grid grid-5col">
+                    {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
+                    use both the "grid" and "grid-Ncol" class where "N" can be any number
+                    from 1 to 12 and will create that number of columns. --}}
 
-<!--                <div class="header-fields">-->
-<!--                    <h2 class="charname">-->
-<!--                        <label for="actor.name" class="resource-label">Name</label>-->
-<!--                        <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/>-->
-<!--                    </h2>-->
-<!--                    <h2 class="charname">-->
-<!--                        <label for="system.look" class="resource-label">Look</label>-->
-<!--                        <input type="text" name="system.look" value="{{system.look}}" placeholder="Look"/>-->
-<!--                    </h2>-->
-<!--                </div>-->
-
-                {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-                use both the "grid" and "grid-Ncol" class where "N" can be any number
-                from 1 to 12 and will create that number of columns. --}}
-                <div class="abilities flexcol">
-                    {{#each system.abilities as |ability key|}}
-                    <div class="ability flexrow flex-group-center">
-                        <!-- <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="2d6+@abilities.{{key}}.value" data-label="{{ability.sheetLabel}}">{{ability.sheetLabel}}</label> -->
-                        <label for="system.abilities.{{key}}.value" class="resource-label flexlarge align-left">{{ability.sheetLabel}}</label>
-                        <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
+                    <div class="abilities grid-span-2">
+                        {{#each system.abilities as |ability key|}}
+                        <div class="ability flexrow flex-group-center" style="border:2px solid black">
+                            <!-- <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="2d6+@abilities.{{key}}.value" data-label="{{ability.sheetLabel}}">{{ability.sheetLabel}}</label> -->
+                            <label for="system.abilities.{{key}}.value" class="resource-label flexlarge align-left">{{ability.sheetLabel}}</label>
+                            <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}"
+                                   data-dtype="Number"/>
+                        </div>
+                        {{/each}}
                     </div>
-                    {{/each}}
+
+                    <div class="header-fields grid-span-3" style="border:2px solid black">
+                        <h2 class="charname">
+                            <label for="actor.name" class="resource-label">Tags</label>
+                        </h2>
+                    </div>
                 </div>
 
-                <div class="header-fields">
-                    <h2 class="charname">
-                        <label for="actor.name" class="resource-label">Bonds</label>
-                    </h2>
-                    {{#each system.history as |bond key|}}
-                    <div class="bond flexrow flex-group-center">
-                        <label class="resource-label flexlarge align-left">{{key}}</label>
-                        <input type="text" name="bond-{{key}}" value="{{lookup ../system.history key}}" data-dtype="Number"/>
+                <div style="border:2px solid black">
+                    <div>
+                        <h2 class="charname">
+                            <label for="actor.name" class="resource-label">Bonds</label>
+                        </h2>
                     </div>
-                    {{/each}}
+
+                    <div class="grid grid-2col">
+                        {{#each system.history as |bond key|}}
+                        <div class="bond flexrow flex-group-center">
+                            <label class="resource-label flexlarge align-left">{{key}}</label>
+                            <input type="text" name="bond-{{key}}" value="{{lookup ../system.history key}}"
+                                   data-dtype="Number"/>
+                        </div>
+                        {{/each}}
+                    </div>
                 </div>
 
+                <!-- experience -->
                 <div>
                     experience
                     {{{experienceButtons system.attributes.experience.value system.attributes.experience.max}}}
                     > advance
+                </div>
+
+                <!-- advancement -->
+                <div>
+                    {{#each system.advances}}
+                    <div>
+                        <input type="checkbox" name="system.takenAdvances.{{@key}}"
+                               {{#if (lt ../system.attributes.experience.value 5)}}disabled{{/if}}
+                               {{#if (takenMoveBool @key ../system.takenAdvances)}}checked{{/if}} />
+                        {{this.text}}
+                    </div>
+                    {{/each}}
                 </div>
 
             </aside>

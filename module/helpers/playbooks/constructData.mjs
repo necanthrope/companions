@@ -82,49 +82,52 @@ ConstructData.moves = {
 };
 
 ConstructData.tags = {
-    "androgyne" : {
-        "title" : "Androgyne",
-        "description" : "You are programmed to perfectly emulate a human being. Only sensing gear with +vortex can tell you're a construct. Also, when you Convince with Emotions, take +1.",
+    "androgyne": {
+        "title": "Androgyne",
+        "description": "You are programmed to perfectly emulate a human being. Only sensing gear with +vortex can tell you're a construct. Also, when you Convince with Emotions, take +1.",
     },
-    "aware" : {
-        "title" : "Aware",
-        "description" : "You possess an affinity for the Vortex. You begin the game with the Vortex Move of your choice.",
+    "aware": {
+        "title": "Aware",
+        "description": "You possess an affinity for the Vortex. You begin the game with the Vortex Move of your choice.",
     },
-    "eternal" : {
-        "title" : "Eternal",
-        "description" : "You automatically get a full hit (10+) when you make The Death Move.",
+    "eternal": {
+        "title": "Eternal",
+        "description": "You automatically get a full hit (10+) when you make The Death Move.",
     },
-    "flexible" : {
-        "title" : "Flexible",
-        "description" : "You start the game with one additional move from any other playbook.",
+    "flexible": {
+        "title": "Flexible",
+        "description": "You start the game with one additional move from any other playbook.",
     },
-    "vortex" : {
-        "title" : "Vortex",
-        "description" : "As with things' tags. You are constructed from Gallifreyan technology.",
+    "vortex": {
+        "title": "Vortex",
+        "description": "As with things' tags. You are constructed from Gallifreyan technology.",
     },
 };
 
 ConstructData.bonds = {
-    1 : {
-        "historyText" : "%s once repaired my logic core, leaving an impression of their\n" +
+    1: {
+        "historyText": "%s once repaired my logic core, leaving an impression of their\n" +
             "personality.",
-        "bonus" : 2
+        "bonus": 2
     },
-    2 : {
-        "historyText" : "%s was there when I first came online. Like the Doctor, they are my\n" +
+    2: {
+        "historyText": "%s was there when I first came online. Like the Doctor, they are my\n" +
             "parent.",
-        "bonus" : 3
+        "bonus": 3
     },
-    3 : {
-        "historyText" : "%s always treated me like an equal instead of a thing.",
-        "bonus" : 1
+    3: {
+        "historyText": "%s always treated me like an equal instead of a thing.",
+        "bonus": 1
     },
-    4 : {
-        "historyText" : "%s reminds me of the Doctor. I love them for this.",
-        "bonus" : 1
+    4: {
+        "historyText": "%s reminds me of the Doctor. I love them for this.",
+        "bonus": 1
     },
-    5 : {
-        "historyText" : "The Doctor's last words to me were \"Keep an eye on %s.\"",
-        "bonus" : 1
+    5: {
+        "historyText": "The Doctor's last words to me were \"Keep an eye on %s.\"",
+        "bonus": 1
     },
 };
+
+ConstructData.advances = {};
+ConstructData.takenAdvances = {};

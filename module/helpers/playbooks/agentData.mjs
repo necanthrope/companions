@@ -87,27 +87,28 @@ AgentData.moves = {
 };
 
 AgentData.bonds = {
-    1 : {
-        "historyText" : "%s knows something about me that I wish they didn't.",
-        "bonus" : 1
+    1: {
+        "historyText": "%s knows something about me that I wish they didn't.",
+        "bonus": 1
     },
-    2 : {
-        "historyText" : "I once left %s to die.",
-        "bonus" : 3
+    2: {
+        "historyText": "I once left %s to die.",
+        "bonus": 3
     },
-    3 : {
-        "historyText" : "Before I was a companion, I tried to recruit %s to the Agency.",
-        "bonus" : 1
+    3: {
+        "historyText": "Before I was a companion, I tried to recruit %s to the Agency.",
+        "bonus": 1
     },
-    4 : {
-        "historyText" : "%s and I once fought our way out of impossible odds.",
-        "bonus" : 2
+    4: {
+        "historyText": "%s and I once fought our way out of impossible odds.",
+        "bonus": 2
     },
-    5 : {
-        "historyText" : "Of all the people I've seduced, I only ever truly loved %s.",
-        "bonus" : 1
+    5: {
+        "historyText": "Of all the people I've seduced, I only ever truly loved %s.",
+        "bonus": 1
     },
 };
+
 
 AgentData.advances = {
     "bumpBold": {
@@ -158,6 +159,7 @@ AgentData.advances = {
         text: "Leave the TARDIS and live your life",
         types: ["early", "late"],
     },
-
 };
+
+AgentData.takenAdvances = {};
 

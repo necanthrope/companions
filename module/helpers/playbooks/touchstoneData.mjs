@@ -96,24 +96,27 @@ TouchstoneData.moves = {
 };
 
 TouchstoneData.bonds = {
-    1 : {
-        "historyText" : "%s once saved my family's lives. I'll never forget that.",
-        "bonus" : 3
+    1: {
+        "historyText": "%s once saved my family's lives. I'll never forget that.",
+        "bonus": 3
     },
-    2 : {
-        "historyText" : "I totally have a crush on %s.",
-        "bonus" : 1
+    2: {
+        "historyText": "I totally have a crush on %s.",
+        "bonus": 1
     },
-    3 : {
-        "historyText" : "%s is my current BFF. We have been spending a lot of time together lately.",
-        "bonus" : 2
+    3: {
+        "historyText": "%s is my current BFF. We have been spending a lot of time together lately.",
+        "bonus": 2
     },
-    4 : {
-        "historyText" : "%s is my confidante. We tell each other everything.",
-        "bonus" : 2
+    4: {
+        "historyText": "%s is my confidante. We tell each other everything.",
+        "bonus": 2
     },
-    5 : {
-        "historyText" : "%s once totally stabbed me in the back. Not cool.",
-        "bonus" : 1
+    5: {
+        "historyText": "%s once totally stabbed me in the back. Not cool.",
+        "bonus": 1
     },
 };
+
+TouchstoneData.advances = {};
+TouchstoneData.takenAdvances = {};

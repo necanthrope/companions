@@ -106,9 +106,15 @@ export class CompanionsActorSheet extends ActorSheet {
             histLabelObj[historyLabel] = value;
         }
 
-        // Build stat blocks object.
         if (context.system.hasOwnProperty("playbook") && context.system.playbook !== "") {
+            // Build stat blocks object.
             context.system.abilityBlocks = CONFIG.COMPANIONS[playbookDataKey].abilityBlocks;
+
+            // Build advancement object
+            context.system.advances = CONFIG.COMPANIONS[playbookDataKey].advances;
+            if (!context.system.hasOwnProperty("takenAdvances")) {
+                context.system.takenAdvances = {};
+            }
         }
 
         // Build basic moves object.
