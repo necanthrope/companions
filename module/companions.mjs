@@ -132,6 +132,10 @@ Handlebars.registerHelper('abilityProperName', function(abilities, key) {
   return abilities[key].sheetLabel;
 });
 
+Handlebars.registerHelper('parseInt', function(str) {
+  return parseInt(str);
+});
+
 Handlebars.registerHelper('experienceButtons', function(currentXp, maxXp) {
   let ret = "";
   for (let i=1; i<=maxXp; i++) {

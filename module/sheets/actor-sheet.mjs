@@ -382,6 +382,12 @@ export class CompanionsActorSheet extends ActorSheet {
 
     /* -------------------------------------------- */
 
+    _completeAdvance() {
+        const context = this.getData();
+        alert("derp");
+        return "";
+    }
+
     /** @override */
     activateListeners(html) {
         super.activateListeners(html);
@@ -391,6 +397,11 @@ export class CompanionsActorSheet extends ActorSheet {
             const li = $(ev.currentTarget).parents(".item");
             const item = this.actor.items.get(li.data("itemId"));
             item.sheet.render(true);
+        });
+
+
+        html.find('.complete-advance').click(ev => {
+            this.document.update({'system.attributes.experience.value': 0})
         });
 
         // -------------------------------------------------------------

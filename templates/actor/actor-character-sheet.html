@@ -100,6 +100,14 @@
                     > advance
                 </div>
 
+                {{#if (eq (parseInt system.attributes.experience.value) system.attributes.experience.max)}}
+                <div id="advanceInstructions">
+                    <h3>Advancement Instructions</h3>
+                    Select an advance below. When you've selected the one you want,
+                    <button class="complete-advance">click here.</button>
+                </div>
+                {{/if}}
+
                 <!-- advancement -->
                 <div>
                     {{#each system.advances}}
