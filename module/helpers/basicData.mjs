@@ -171,49 +171,61 @@ BasicData.emotionalKeys = {
     "tagNobility": {
         "mark": "Mark XP when you help someone who is helpless at cost to yourself.",
         "advance": "Advance & replace key when ignoring a plea for help causes harm.",
+        "type": "positive",
     },
     "tagOptimism": {
         "mark": "Mark XP when you act with confidence nothing is as bad as it seems.",
         "advance": "Advance & replace key when your optimism is shattered by hard reality.",
+        "type": "positive",
     },
     "tagTrust": {
         "mark": "Mark XP when you entrust your safety to someone without hesitation.",
         "advance": "Advance & replace key when your trust is betrayed.",
+        "type": "positive",
     },
     "tagLove": {
         "mark": "Mark XP when you defend or support someone you love.",
         "advance": "Advance & replace key when you sever the relationship with your love.",
+        "type": "positive",
     },
     "tagLoyalty": {
         "mark": "Mark XP when you are loyal to someone at your own expense.",
         "advance": "Advance & replace key when your betrayal of someone causes harm.",
+        "type": "positive",
     },
     "tagCuriosity": {
         "mark": "Mark XP when you disregard a Dire SItuation to pursue knowledge.",
         "advance": "Advance & replace key you forego discovery to avoid a Dire Situation.",
+        "type": "positive",
     },
     "tagFear": {
         "mark": "Mark XP when you avoid a Dire Situation out of fear for your own safety.",
         "advance": "Advance & replace key when you leap into a Dire Situation without hesitation.",
+        "type": "negative",
     },
     "tagAnger": {
         "mark": "Mark XP when you punish or lash out at someone.",
         "advance": "Advance & replace key when you let go of a serious, bona fide grievance.",
+        "type": "negative",
     },
     "tagGuilt": {
         "mark": "Mark XP when you try to make restitution for one of your past sins.",
         "advance": "Advance & replace key when you genuinely forgive yourself for a past sin.",
+        "type": "negative",
     },
     "tagHate": {
         "mark": "Mark XP when you hurt or impede those who you hate.",
         "advance": "Advance & replace key when you forgive who you hate at cost to yourself.",
+        "type": "negative",
     },
     "tagSelfishness": {
         "mark": "Mark XP when you disregard the safety of others to benefit yourself.",
         "advance": "Advance & replace key when you sacrifice yourself or something you value.",
+        "type": "negative",
     },
     "tagHubris": {
         "mark": "Mark XP when you ignore the needs of others to get what you deserve.",
         "advance": "Advance & replace key when the welfare of others stops you from doing what you will.",
+        "type": "negative",
     },
 };
