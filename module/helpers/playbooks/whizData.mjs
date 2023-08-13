@@ -7,6 +7,15 @@ WhizData.abilityBlocks = {
     "3": {"cool": "-1", "bold": "-1", "appeal": "+0", "clever": "+2", "vortex": "+2"},
 }
 
+WhizData.createBlocks = {
+    "names": "Curie, Bohr, Faraday, Heisenberg, Rutherford, Dirac, Brahe, Euclid, Erlich, Lysenko.<br/>\nExilon, Fomasi, Cheem, Whyrn, Makra, Optera, Toclophane, Dydra, Hoyx, Movel.",
+    "genderPresentation": "Feminine, masculine, androgynous, fluid, nonhuman.",
+    "clothes": "Casual clothes, stained lab wear, ratty t-shirts and jeans, sports team wear, hand-me-downs.",
+    "face": "Round face, hatchet face, baby face, soft face, scowling face.",
+    "eyes": "Curious eyes, bright eyes, clever eyes, clear eyes, innocent eyes.",
+    "body": "Doughy body, short body, wiry body, thin body, stringy body.",
+};
+
 WhizData.moves = {
     "playbook": {
         "aggressiveImprovisation": {

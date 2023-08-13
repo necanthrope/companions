@@ -107,6 +107,9 @@ export class CompanionsActorSheet extends ActorSheet {
         }
 
         if (context.system.hasOwnProperty("playbook") && context.system.playbook !== "") {
+            // Build look lists object.
+            context.system.createBlocks = CONFIG.COMPANIONS[playbookDataKey].createBlocks;
+
             // Build stat blocks object.
             context.system.abilityBlocks = CONFIG.COMPANIONS[playbookDataKey].abilityBlocks;
 

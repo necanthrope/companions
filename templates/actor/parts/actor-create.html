@@ -13,6 +13,35 @@
 </div>
 
 {{#if (ne system.playbook "")}}
+
+{{#if system.createBlocks.rank}}
+<div>
+    <h2>Rank</h2>
+    <p>
+        {{{system.createBlocks.rank}}}
+    </p>
+</div>
+{{/if}}
+
+<div>
+    <h2>Name</h2>
+    <p>
+        {{{system.createBlocks.names}}}
+    </p>
+</div>
+
+<div>
+    <h2>Look</h2>
+    <p>
+        {{{system.createBlocks.genderPresentation}}}<br/>
+        {{{system.createBlocks.clothes}}}<br/>
+        {{{system.createBlocks.face}}}<br/>
+        {{{system.createBlocks.eyes}}}<br/>
+        {{#if system.createBlocks.hair}}{{{system.createBlocks.hair}}}<br/>{{/if}}
+        {{{system.createBlocks.body}}}<br/>
+    </p>
+</div>
+
 <div>
     <h2>Stats</h2>
     Choose one set.
@@ -30,7 +59,7 @@
 
 <div>
     <h2>Bonds</h2>
-    These are events that happened with other Companions in previous episodes. Fill in the name of which Companion they happened with. Tell them what happened.<br/>
+    These are events that happened with other Companions in previous episodes. Choose which Companion they happened with. Tell them what happened.<br/>
     The total of the numbers in parentheses (max +3) for each Companion is your Bond with them. Each name and total will be recorded for you in the Bonds box.
     <ul>
         {{#each system.bonds}}

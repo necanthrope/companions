@@ -7,6 +7,15 @@ AgentData.abilityBlocks = {
     "3": {"cool": "+2", "bold": "+1", "appeal": "+1", "clever": "+0", "vortex": "-1"},
 };
 
+AgentData.createBlocks = {
+    "rank": "Lieutenant, Major, Captain, Colonel, Commander, none.",
+    "names": "Drake, Bauer, Smiley, Bourne, Steed, Rosenberg, Phelps, Flint, MacLean, Harkness.<br/>\nModesty, Mata, Sydney, Vesper, Salt, Nikita, Plame, Marlene, Elektra, Iselin.",
+    "genderPresentation": "Feminine, masculine, androgynous, fluid, nonhuman.",
+    "clothes": "Formal wear, vintage military wear, nondescript wear, modern BDUs, high fashion.",
+    "face": "Earnest face, average face, striking face, soft face, lovely face.",
+    "eyes": "Inscrutable eyes, weathered eyes, knowing eyes, dark eyes, dead eyes.",
+    "body": "Perfect body, wiry body, compact body, soft body, graceful body.",
+};
 
 AgentData.moves = {
     "playbook": {

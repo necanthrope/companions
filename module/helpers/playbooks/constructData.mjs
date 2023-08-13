@@ -7,6 +7,15 @@ ConstructData.abilityBlocks = {
     "3": {"cool": "-1", "bold": "+1", "appeal": "-1", "clever": "+2", "vortex": "+1"},
 }
 
+ConstructData.createBlocks = {
+    "names": "Gort, Rur, Giskard, Bors, Ash. Coppelia, Olympia, Zhora, Eve, Alsatia.<br/>\nMentat, Comox, Hydral, Photius, Scorlin.",
+    "genderPresentation": "Feminine, masculine, androgynous, fluid, nonhuman.<br/>\nBiped, quadriped, rolling, hover, insectoid, gestalt.",
+    "clothes": "Nondescript clothing, simple clothing, tattered clothing, plated armor, no discernable clothing.",
+    "face": "Pleasant face, attractive face, blank face, non symmetrical face, armored mask, no face.",
+    "eyes": "Soft eyes, staring eyes, dead eyes, sensor strip, enhanced scanners, no visible eyes.",
+    "body": "Strong body, graceful body, squat chassis, abstract body, swarm body.",
+};
+
 ConstructData.abilityTags = {
     "0": ["+androgyne", "+vortex"],
     "1": ["+aware", "+vortex"],

@@ -7,6 +7,15 @@ WitnessData.abilityBlocks = {
     "3": {"cool": "+0", "bold": "-1", "appeal": "+1", "clever": "+2", "vortex": "+1"},
 }
 
+WitnessData.createBlocks = {
+    "names": "Emma, Sofia, Eden, Fatima, Yeon, JIng, Maeva, Anna, Maria, Sara.<br/>\nMohammed, Jayden, Noah, Wei, George, Marc, Andrei, Jun, Carl, Hiro.",
+    "genderPresentation": "Feminine, masculine, androgynous, fluid, nonhuman.",
+    "clothes": "Flashy outfits, retro duds, business wear, timeless fashion, second hand clothes, jeans & hoodie.",
+    "face": "Broad face, nondescript face, lean face, round face, weary face.",
+    "eyes": "Bright eyes, eager eyes, deep eyes, quick eyes, soft eyes.",
+    "body": "Stocky body, strong body, soft body, thick body, petite body,",
+};
+
 WitnessData.moves = {
     "playbook": {
         "getIntoTrouble": {

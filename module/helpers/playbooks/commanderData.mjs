@@ -7,6 +7,17 @@ CommanderData.abilityBlocks = {
     "3": {"cool": "-1", "bold": "+1", "appeal": "+0", "clever": "+2", "vortex": "+1"}, //+technical
 }
 
+CommanderData.createBlocks = {
+
+    "rank": "Colonel, Brigadier, General. Senator, Lady/Lord, Prime Minister.<br/>Torchwood Actual.</br>Force Captain, Foremost, Storm Leader, Hive Control, Lady/Lord-General.",
+    "names": "Fitzpatrick, Patel, Donoghue, Rodriguez, Taylor, Murphy, Lynch, Mbenge.<br/>\nChan, O’Connor, Khan, Quinn, Bibi, Duffy, Ali, Mahmood, Campbell.<br/>,Thal, Voord, Koquilliax, Harbi, Xero, Dhravin, Rill, Makra.<br/>\nUraxi, Pelad, Solona, Drashe, Wirri, Ogri, Jagar-Ki, Sylar.",
+    "genderPresentation": "Feminine, masculine, androgynous, fluid, nonhuman.",
+    "clothes": "Crisp uniform, rumpled uniform, worn uniform, Robes of office, power suit, Seville Row.",
+    "face": "Lined face, cold face, shrewd face, baby face, scarred face.",
+    "eyes": "Distant eyes, sharp eyes, calculating eyes, darting eyes, staring eyes.",
+    "body": "Wiry body, soft body, tough body, strange body, exotic body.",
+};
+
 CommanderData.abilityTags = {
     "0": ["+commando"],
     "1": ["+intelligence"],

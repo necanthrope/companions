@@ -7,6 +7,16 @@ TouchstoneData.abilityBlocks = {
     "3": {"cool": "+2", "bold": "-1", "appeal": "+2", "clever": "-1", "vortex": "+1"},
 }
 
+TouchstoneData.createBlocks = {
+    "names": "Sarah, Laura, Emma, Gemma, Becca. Daisy, Blossom, Iris, Jasmine, Rose.<br/>\nAndrew, David, James, Daniel, Paul. Steele, Pierce, Kane, Sampson, Tyler.",
+    "genderPresentation": "Feminine, masculine, androgynous, fluid, nonhuman.",
+    "clothes": "High fashion, mall fashion, vintage fashion, hipster fashion, urban fashion.",
+    "face": "Fresh face, chiseled face, elfin face, strong face, vulnerable face.",
+    "eyes": "Sparkling eyes, bewitching eyes, shy eyes, hard eyes, intense eyes.",
+    "hair": "Curly hair, long hair, sleek hair, stylish hair, flirty hair.",
+    "body": "Gym body, lush body, sleek body, cut body, knockout body.",
+};
+
 TouchstoneData.moves = {
     "playbook": {
         "somethingAboutYou": {

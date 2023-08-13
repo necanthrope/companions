@@ -7,6 +7,15 @@ WarriorPoetData.abilityBlocks = {
     "3": {"cool": "+2", "bold": "+2", "appeal": "-1", "clever": "+0", "vortex": "-1"},
 }
 
+WarriorPoetData.createBlocks = {
+    "names": "Windstorm, Lightning, Falling Star, Tornado, Night. Bear, Turtle, Stag, Lapwing, Crow, Owl.<br/>\nWisdom, Luck, Joy, Strength, Truth. Tree, Sky, Cloud, Mountain, River",
+    "genderPresentation": "Feminine, masculine, androgynous, fluid, nonhuman.",
+    "clothes": "Battered armor, patchwork armor, mismatched armor, modern armor, future armor.",
+    "face": "Stoic face, lined face, scowling face, weathered face, scarred face, flat face.",
+    "eyes": "Calculating eyes, wild eyes, psycho eyes, cunning eyes, sad eyes, dead eyes.",
+    "body": "Hard body, rangy body, huge body, buff body, wiry body, compact body, stocky body.",
+};
+
 WarriorPoetData.moves = {
     "playbook": {
         "keenEyes": {
