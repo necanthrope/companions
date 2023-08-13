@@ -9,7 +9,7 @@
     <option value="{{@key}}" {{#if (eq @key ../system.playbook)}} selected {{/if}}>{{this.title}}</option>
     {{/each}}
     </select>
-    <button onclick="document.getElementById('playbook-selector').removeAttribute('disabled')">unlock</button>
+    <button onclick="document.getElementById('playbook-selector').removeAttribute('disabled')" style="width: fit-content">unlock</button>
 </div>
 
 {{#if (ne system.playbook "")}}
