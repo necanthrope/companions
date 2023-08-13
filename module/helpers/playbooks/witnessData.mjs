@@ -93,6 +93,8 @@ WitnessData.moves = {
     }
 };
 
+WitnessData.moveInstructions = "You get all the basic moves, plus Get into Trouble and A Little Help.<br/>\nChoose one additional Witness move.";
+
 WitnessData.bonds = {
     1: {
         "historyText": "%s was there for me on the Day She Died.",

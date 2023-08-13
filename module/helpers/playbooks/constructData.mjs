@@ -90,6 +90,8 @@ ConstructData.moves = {
     }
 };
 
+ConstructData.moveInstructions = "Choose two Construct moves."
+
 ConstructData.tags = {
     "androgyne": {
         "title": "Androgyne",

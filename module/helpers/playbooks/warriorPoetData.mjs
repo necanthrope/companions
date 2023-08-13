@@ -93,6 +93,8 @@ WarriorPoetData.moves = {
     }
 };
 
+WarriorPoetData.moveInstructions = "Choose two Warrior-Poet moves.";
+
 WarriorPoetData.bonds = {
     1: {
         "historyText": "%s is my Elder. They have taught me much already.",

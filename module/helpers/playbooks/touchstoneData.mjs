@@ -105,6 +105,8 @@ TouchstoneData.moves = {
     }
 };
 
+TouchstoneData.moveInstructions = "Choose two Touchstone moves.";
+
 TouchstoneData.bonds = {
     1: {
         "historyText": "%s once saved my family's lives. I'll never forget that.",

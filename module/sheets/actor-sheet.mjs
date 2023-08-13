@@ -120,6 +120,9 @@ export class CompanionsActorSheet extends ActorSheet {
             }
         }
 
+        // Move selection instructions
+        context.system.moveInstructions = CONFIG.COMPANIONS[playbookDataKey].moveInstructions;
+
         // Build basic moves object.
         this._buildBasicMoves(context, statObj, attributeLabelObj, histObj, histLabelObj);
 

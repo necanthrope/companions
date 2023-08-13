@@ -95,6 +95,8 @@ AgentData.moves = {
 
 };
 
+AgentData.moveInstructions = "You get all the basic moves, plus Not My First Time at the Dance.<br/>\nChoose one additional Agent move."
+
 AgentData.bonds = {
     1: {
         "historyText": "%s knows something about me that I wish they didn't.",

@@ -114,6 +114,8 @@ CommanderData.moves = {
     }
 };
 
+CommanderData.moveInstructions = "You get all the basic moves, plus Into the Breach. <br/>\nChoose one additional Commander move.";
+
 CommanderData.bonds = {
     1: {
         "historyText": "I am considering offering %s membership on the Team.",

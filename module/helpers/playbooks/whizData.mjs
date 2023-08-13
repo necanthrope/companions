@@ -1,3 +1,5 @@
+import {CommanderData} from "./commanderData.mjs";
+
 export const WhizData = {};
 
 WhizData.abilityBlocks = {
@@ -93,6 +95,9 @@ WhizData.moves = {
         }
     }
 };
+
+
+WhizData.moveInstructions = "You get all the basic moves, plus Aggressive Improvisation. <br/>\nChoose one additional Whiz move.";
 
 WhizData.bonds = {
     1: {
