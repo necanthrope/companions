@@ -113,51 +113,51 @@ AgentData.bonds = {
 AgentData.advances = {
     "bumpBold": {
         text: "+1 Bold (max +2)",
-        types: ["early"],
+        types: ["early", "late"],
     },
     "bumpClever": {
         text: "+1 Clever (max +2)",
-        types: ["early"],
+        types: ["early", "late"],
     },
     "bumpAppeal": {
         text: "+1 Appeal (max +2)",
-        types: ["early"],
+        types: ["early", "late"],
     },
     "newMove1": {
         text: "A new Agent Move",
-        types: ["early"],
+        types: ["early", "late"],
     },
     "newMove2": {
         text: "A new Agent Move",
-        types: ["early"],
+        types: ["early", "late"],
     },
     "newExtMove1": {
         text: "A new move from another playbook",
-        types: ["early"],
+        types: ["early", "late"],
     },
     "newExtMove2": {
         text: "A new move from another playbook",
-        types: ["early"],
+        types: ["early", "late"],
     },
     "vortexMove": {
         text: "Take any Vortex Move",
-        types: ["early", "late"],
+        types: ["late"],
     },
     "bumpAny": {
         text: "+1 to any stat (max +3)",
-        types: ["early", "late"],
+        types: ["late"],
     },
     "changeRomance": {
         text: "Change your Romance Move to another",
-        types: ["early", "late"],
+        types: ["late"],
     },
     "changePlaybook": {
         text: "Change to another playbook",
-        types: ["early", "late"],
+        types: ["late"],
     },
     "leaveTheTardis": {
         text: "Leave the TARDIS and live your life",
-        types: ["early", "late"],
+        types: ["late"],
     },
 };
 

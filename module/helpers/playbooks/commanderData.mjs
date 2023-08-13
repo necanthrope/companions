@@ -126,5 +126,63 @@ CommanderData.bonds = {
     },
 };
 
-CommanderData.advances = {};
+CommanderData.advances = {
+    "bumpTeamSize1": {
+        text: "Increase your team by size by one",
+        types: ["early", "late"],
+    },
+    "changeAoS1": {
+        text: "Change one AoS tag, yours or others",
+        types: ["early", "late"],
+    },
+    "changeAoS2": {
+        text: "Change one AoS tag, yours or others",
+        types: ["early", "late"],
+    },
+    "bumpAny1": {
+        text: "+1 to any stat (max +3)",
+        types: ["late"],
+    },
+    "newMove1": {
+        text: "A new Commander Move",
+        types: ["early", "late"],
+    },
+    "newMove2": {
+        text: "A new Commander Move",
+        types: ["early", "late"],
+    },
+    "newExtMove1": {
+        text: "A new move from another playbook",
+        types: ["early", "late"],
+    },
+    "newExtMove2": {
+        text: "A new move from another playbook",
+        types: ["early", "late"],
+    },
+    "vortexMove": {
+        text: "Take any Vortex Move",
+        types: ["late"],
+    },
+    "bumpTeamSize2": {
+        text: "Increase your team by size by one",
+        types: ["late"],
+    },
+    "bumpAny2": {
+        text: "+1 to any stat (max +3)",
+        types: ["late"],
+    },
+    "changeRomance": {
+        text: "Change your Romance Move to another",
+        types: ["late"],
+    },
+    "changePlaybook": {
+        text: "Change to another playbook",
+        types: ["late"],
+    },
+    "leaveTheTardis": {
+        text: "Leave the TARDIS and live your life",
+        types: ["late"],
+    },
+};
+
 CommanderData.takenAdvances = {};

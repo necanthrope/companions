@@ -107,5 +107,55 @@ WarriorPoetData.bonds = {
     },
 };
 
-WarriorPoetData.advances = {};
+WarriorPoetData.advances = {
+    "bumpCool": {
+        text: "+1 Cool (max +2)",
+        types: ["early", "late"],
+    },
+    "bumpClever": {
+        text: "+1 Clever (max +2)",
+        types: ["early", "late"],
+    },
+    "bumpAppeal": {
+        text: "+1 Appeal (max +2)",
+        types: ["early", "late"],
+    },
+    "newMove1": {
+        text: "A new Warrior-Poet Move",
+        types: ["early", "late"],
+    },
+    "newMove2": {
+        text: "A new Warrior-Poet Move",
+        types: ["early", "late"],
+    },
+    "newExtMove1": {
+        text: "A new move from another playbook",
+        types: ["early", "late"],
+    },
+    "newExtMove2": {
+        text: "A new move from another playbook",
+        types: ["early", "late"],
+    },
+    "vortexMove": {
+        text: "Take any Vortex Move",
+        types: ["late"],
+    },
+    "bumpAny": {
+        text: "+1 to any stat (max +3)",
+        types: ["late"],
+    },
+    "changeRomance": {
+        text: "Change your Romance Move to another",
+        types: ["late"],
+    },
+    "changePlaybook": {
+        text: "Change to another playbook",
+        types: ["late"],
+    },
+    "leaveTheTardis": {
+        text: "Leave the TARDIS and live your life",
+        types: ["late"],
+    },
+};
+
 WarriorPoetData.takenAdvances = {};

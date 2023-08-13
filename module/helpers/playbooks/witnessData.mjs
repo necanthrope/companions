@@ -91,5 +91,38 @@ WitnessData.bonds = {
     },
 };
 
-WitnessData.advances = {};
+WitnessData.advances = {
+    "bumpCool": {
+        text: "+1 Cool (max +2)",
+        types: ["early", "late"],
+    },
+    "bumpBold": {
+        text: "+1 Bold (max +2)",
+        types: ["early", "late"],
+    },
+    "bumpAppeal": {
+        text: "+1 Appeal (max +2)",
+        types: ["early", "late"],
+    },
+    "newMove1": {
+        text: "A new Witness Move",
+        types: ["early", "late"],
+    },
+    "newMove2": {
+        text: "A new Witness Move",
+        types: ["early", "late"],
+    },
+    "newExtMove": {
+        text: "A new move from another playbook",
+        types: ["early", "late"],
+    },
+    "leaveTheTardis": {
+        text: "Leave the TARDIS and live your life",
+        types: ["late"],
+    },
+    "embraceYourPotential": {
+        text: "Embrace your Potential",
+        types: ["late"],
+    },
+};
 WitnessData.takenAdvances = {};
