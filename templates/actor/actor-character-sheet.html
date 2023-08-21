@@ -61,9 +61,12 @@
                         {{#each system.abilities as |ability key|}}
                         <div class="ability flexrow flex-group-center" style="border:2px solid black">
                             <!-- <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="2d6+@abilities.{{key}}.value" data-label="{{ability.sheetLabel}}">{{ability.sheetLabel}}</label> -->
-                            <label for="system.abilities.{{key}}.value" class="resource-label flexlarge align-left">{{ability.sheetLabel}}</label>
-                            <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}"
-                                   data-dtype="Number"/>
+                            <label for="ability.{{@key}}" class="resource-label flexlarge align-left">{{ability.sheetLabel}}</label>
+                            <button class="lower-ability" data-ability="{{ability.sheetLabel}}" style="width: fit-content">-</button>
+                            <span id="ability.{{@key}}">
+                                {{calcStat ../system @key}}
+                            </span>
+                            <button class="raise-ability" data-ability="{{ability.sheetLabel}}" style="width: fit-content">+</button>
                         </div>
                         {{/each}}
                     </div>
@@ -86,8 +89,9 @@
                         {{#each system.history as |bond key|}}
                         <div class="bond flexrow flex-group-center">
                             <label class="resource-label flexlarge align-left">{{key}}</label>
-                            <input type="text" name="bond-{{key}}" value="{{lookup ../system.history key}}"
-                                   data-dtype="Number"/>
+                            <button class="lower-bond" data-bond="{{key}}" style="width: fit-content">-</button>
+                            <span>{{lookup ../system.history key}}</span>
+                            <button class="raise-bond" data-bond="{{key}}" style="width: fit-content">+</button>
                         </div>
                         {{/each}}
                     </div>

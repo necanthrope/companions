@@ -136,6 +136,10 @@ Handlebars.registerHelper('parseInt', function(str) {
   return parseInt(str);
 });
 
+Handlebars.registerHelper('calcStat', function(system, key) {
+  return system.abilities[key].value + system.abilityMods[key].value;
+});
+
 Handlebars.registerHelper('experienceButtons', function(currentXp, maxXp) {
   let ret = "";
   for (let i=1; i<=maxXp; i++) {

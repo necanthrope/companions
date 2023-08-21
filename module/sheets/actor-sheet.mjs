@@ -85,7 +85,7 @@ export class CompanionsActorSheet extends ActorSheet {
         for (let [k, v] of Object.entries(context.system.abilities)) {
             v.label = game.i18n.localize(CONFIG.COMPANIONS.abilities[k]) ?? k;
             v.sheetLabel = game.i18n.localize(CONFIG.COMPANIONS.abilityLabels[k]) ?? k;
-            statObj[v.label] = v.value;
+            statObj[v.label] = v.value + context.system.abilityMods[k].value;
             attributeLabelObj[v.label] = v.sheetLabel;
         }
 
@@ -118,10 +118,11 @@ export class CompanionsActorSheet extends ActorSheet {
             if (!context.system.hasOwnProperty("takenAdvances")) {
                 context.system.takenAdvances = {};
             }
-        }
 
-        // Move selection instructions
-        context.system.moveInstructions = CONFIG.COMPANIONS[playbookDataKey].moveInstructions;
+            // Move selection instructions
+            context.system.moveInstructions = CONFIG.COMPANIONS[playbookDataKey].moveInstructions;
+
+        }
 
         // Build basic moves object.
         this._buildBasicMoves(context, statObj, attributeLabelObj, histObj, histLabelObj);
@@ -138,12 +139,12 @@ export class CompanionsActorSheet extends ActorSheet {
     _buildAbilities(playookDataKey, context) {
         if (context.system.hasOwnProperty("abilityBlockSelected")) {
             let statBlock = CONFIG.COMPANIONS[playookDataKey].abilityBlocks[context.system.abilityBlockSelected];
-            context.system.abilities.cool.value = parseInt(statBlock.cool);
-            context.system.abilities.bold.value = parseInt(statBlock.bold);
-            context.system.abilities.appeal.value = parseInt(statBlock.appeal);
-            context.system.abilities.clever.value = parseInt(statBlock.clever);
-            context.system.abilities.vortex.value = parseInt(statBlock.vortex);
-            console.log("calculated abilities");
+            context.system.abilities.cool.value = parseInt(statBlock.cool);// + context.system.abilityMods.cool.value;
+            context.system.abilities.bold.value = parseInt(statBlock.bold);// + context.system.abilityMods.bold.value;
+            context.system.abilities.appeal.value = parseInt(statBlock.appeal);// + context.system.abilityMods.appeal.value;
+            context.system.abilities.clever.value = parseInt(statBlock.clever);// + context.system.abilityMods.clever.value;
+            context.system.abilities.vortex.value = parseInt(statBlock.vortex);// + context.system.abilityMods.vortex.value;
+            this.document.system.abilities = context.system.abilities;
         }
     }
 
@@ -408,6 +409,24 @@ export class CompanionsActorSheet extends ActorSheet {
 
         html.find('.complete-advance').click(ev => {
             this.document.update({'system.attributes.experience.value': 0})
+        });
+
+        html.find('.raise-ability').click(ev => {
+            let ability = ev.currentTarget.dataset.ability.toLowerCase();
+            let baseVal = this.document.system.abilities[ability].value;
+            let oldModVal = this.document.system.abilityMods[ability].value;
+            if ((baseVal + oldModVal + 1) <= 3) {
+                this.document.update({[`system.abilityMods.${ability}.value`]: oldModVal +1});
+            }
+        });
+
+        html.find('.lower-ability').click(ev => {
+            let ability = ev.currentTarget.dataset.ability.toLowerCase();
+            let baseVal = this.document.system.abilities[ability].value;
+            let oldModVal = this.document.system.abilityMods[ability].value;
+            if ((baseVal + oldModVal - 1) >= -2) {
+                this.document.update({[`system.abilityMods.${ability}.value`]: oldModVal -1});
+            }
         });
 
         // -------------------------------------------------------------
